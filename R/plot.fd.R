@@ -5,7 +5,7 @@
         if (class(x)[1] == "fts"){
             if (is.null(col)) {
                 nx <- length(x$x)
-                palette(rainbow(min(100, 1.25 * nx)))
+                palette(rainbow(min(1024,1.25 * nx)))
                 col = 1:nx
             }
             if (xlab == x$xname)
@@ -22,7 +22,7 @@
         if (is.null(col)) {
             ny <- ncol(as.matrix(x$y))
             if (ny > 1)
-                palette(rainbow(min(100, 1.25 * ny)))
+                palette(rainbow(min(1024,1.25 * ny)))
             col <- 1:ny
         }
         yy <- as.matrix(x$y)
