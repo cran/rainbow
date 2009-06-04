@@ -7,7 +7,13 @@
     y <- as.matrix(y)
     if (length(x) != nrow(y)) 
         stop("Dimensions do not match")
-    ytimes <- time(ts(rep(NA, ncol(y)), s = start, f = frequency))
+    if (length(colnames(y))==0){         
+        ytimes <- time(ts(rep(NA, ncol(y)), s = start, f = frequency))
+    }
+    else{
+        dumm <- as.numeric(colnames(y))
+        ytimes <- ts(dumm, s = dumm[1], f = frequency)
+    }
     if (max(abs(ytimes - floor(ytimes))) < 1e-09) 
         ylab <- paste(ytimes)
     else if (frequency == 4) 
@@ -27,4 +33,5 @@
         yname = yname), class = c("fts","fd")))
 
 }
+
 

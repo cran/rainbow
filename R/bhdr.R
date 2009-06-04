@@ -1,4 +1,4 @@
-bhdr <- function (data, alpha = c(0.01, 0.5), h, label = T) 
+bhdr <- function (data, alpha = c(0.01, 0.5), h, label = TRUE, ...) 
 {
     y = t(data$y)
     sco = PCAproj(y, k = 2)$scores
@@ -11,7 +11,7 @@ bhdr <- function (data, alpha = c(0.01, 0.5), h, label = T)
     hdr1 <- hdrcde:::hdr.info.2d(sco[, 1], sco[, 2], den, alpha = alpha)
     hdrcde:::plothdr2d(sco[, 1], sco[, 2], den, alpha, xlab = "PC score 1", 
         ylab = "PC score 2", show.points = FALSE, , xaxs = "i", 
-        yaxs = "i")
+        yaxs = "i", ...)
     points(sco[, 1], sco[, 2], pch = 16, cex = 0.5, col = 1)
     points(hdr1$mode[1], hdr1$mode[2], pch = 8, col = "red")
     index <- hdr1$fxy <= min(hdr1$falpha)
