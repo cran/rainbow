@@ -1,41 +1,42 @@
-fhdr <- function (data, alpha = c(0.01, 0.5), h, label = T, xlab, ylab, ...) 
+fhdr <- function (data, alpha = c(0.01, 0.5), label = T, xlab, ylab, ...)
 {
     y = t(data$y)
-    sco = PCAproj(y, k = 2)$scores
+    sco = PCAproj(y, k = 2)$scores   
     ylim = range(y, na.rm = TRUE)
-    if (missing(h)) 
-        h <- Hscv.diag(sco, binned = TRUE)
-    else h <- diag(h)
-    den <- kde(x = sco, H = h)
-    den <- list(x = den$eval.points[[1]], y = den$eval.points[[2]], 
-        z = den$estimate)
-    hdr1 <- hdrcde:::hdr.info.2d(sco[, 1], sco[, 2], den, alpha = alpha)
-    index <- hdr1$fxy <= min(hdr1$falpha)
-    outliers <- which(as.vector(index))
-    insideone = which(hdr1$fxy > hdr1$falpha[2])
-    insidetwo = which(hdr1$fxy > hdr1$falpha[1])
-    center <- which(hdr1$fxy == max(hdr1$fxy))
-    insideonecurve = y[insideone, ]
-    insidetwocurve = y[insidetwo, ]
-    outliercurve = y[outliers, ]
-    centercurve <- y[center, ]
-    maximum3 <- apply(insideonecurve, 2, max)
-    minimum3 <- apply(insideonecurve, 2, min)
-    maximum4 <- apply(insidetwocurve, 2, max)
-    minimum4 <- apply(insidetwocurve, 2, min)
-    n <- length(outliers)
-    x = data$x
-    plot(c(x, rev(x)), c(maximum4, rev(minimum4)), type = "n", 
-        main = "", ylim = ylim, xlab = xlab, ylab = ylab, ...)
-    polygon(c(x, rev(x)), c(maximum4, rev(minimum4)), border = FALSE, 
-        col = "dark gray")
-    polygon(c(x, rev(x)), c(maximum3, rev(minimum3)), border = FALSE, 
-        col = "light gray")
-    lines(fts(x, centercurve), col = "black", ...)
-    if (n > 0) {
-        outliercurve <- y[outliers, ]
-        lines(fts(x, matrix(t(outliercurve), length(x), n)), 
-            col = rainbow(n), ...)
-        return(outliers)
+    den <- kde(x = sco, H = 0.8 * Hscv.diag(sco, binned = TRUE))
+    hdr1 <- hdrcde:::hdr.info.2d(sco[,1],sco[,2],
+        list(x=den$eval.points[[1]],y=den$eval.points[[2]],z=den$estimate),alpha=alpha)
+    index <- (hdr1$fxy < min(hdr1$falpha))
+    outlier <- which(as.vector(index))
+    index <- (hdr1$fxy > hdr1$falpha[1])
+    out <- which(as.vector(index))
+    outcurve <- y[out,]
+    maximum2 <- apply(outcurve,2,max)
+    minimum2 <- apply(outcurve,2,min)
+    index <- (hdr1$fxy > hdr1$falpha[2])
+    inside <- as.matrix(which(as.vector(index)))
+    insideone <- which(pam(inside,2)$clustering==2)
+    insidetwo <- which(pam(inside,2)$clustering==1)
+    insideone <- y[inside[insideone,],]
+    insidetwo <- y[inside[insidetwo,],]
+    maximum3 <- apply(insideone,2,max)
+    minimum3 <- apply(insideone,2,min)
+    maximum4 <- apply(insidetwo,2,max)
+    minimum4 <- apply(insidetwo,2,min)
+    dist <- (sco[,1]-hdr1$mode[1])^2+(sco[,2]-hdr1$mode[2])^2
+    center <- order(dist)[1]
+    centercurve <- y[center,]
+    n <- length(outlier)
+    x <- data$x
+    plot(c(x,rev(x)),c(maximum2,rev(minimum2)),type="n",main="",ylim=ylim,xlab=xlab,ylab=ylab,...)
+    polygon(c(x,rev(x)),c(maximum2,rev(minimum2)),border=FALSE,col="light gray",ylim=ylim,...)
+    polygon(c(x,rev(x)),c(maximum3,rev(minimum3)),border=FALSE,col="dark gray",...)
+    polygon(c(x,rev(x)),c(maximum4,rev(minimum4)),border=FALSE,col="dark gray",...)
+    lines(fts(x,centercurve),col="black",...)
+    if (n > 0) 
+    {
+        outliercurve <- y[outlier,]
+        lines(fts(x,t(outliercurve)),col=rainbow(n),...)
     }
+    return(outlier)
 }

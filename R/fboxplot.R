@@ -1,5 +1,5 @@
 fboxplot <- function (data, plot.type = c("functional", "bivariate"), type = c("bag", 
-    "hdr"), alpha = c(0.01, 0.5), h, factor = 2.57, na.rm = TRUE,
+    "hdr"), alpha = c(0.01, 0.5), factor = 2.57, na.rm = TRUE,
     xlab = data$xname, ylab = data$yname, ...) 
 {
     op <- par(no.readonly = TRUE)
@@ -12,14 +12,14 @@ fboxplot <- function (data, plot.type = c("functional", "bivariate"), type = c("
     if (plot.type == "functional") {
         if (type == "bag") 
             fbag(data, factor, xlab = xlab, ylab = ylab, ...)
-        else fhdr(data, alpha, h, xlab = xlab, ylab = ylab, ...)
+        else fhdr(data, alpha, xlab = xlab, ylab = ylab, ...)
     }
     if (plot.type == "bivariate") {
         par(pty="s")
         sco = PCAproj(t(data$y))$scores 
         if (type == "bag") 
             bbag(data, factor, ...)
-        else bhdr(data, alpha, h, ...)
+        else bhdr(data, alpha, ...)
         exit.restore <- function()
         {
           par(op)
@@ -27,4 +27,3 @@ fboxplot <- function (data, plot.type = c("functional", "bivariate"), type = c("
         on.exit(exit.restore()) 
     }
 }
-
