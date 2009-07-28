@@ -35,8 +35,8 @@ fbag <- function (data, factor = 2.57, xlim = NULL, ylim = range(data$y, na.rm =
         col = "light gray", ylim = ylim, ...)
     polygon(c(x, rev(x)), c(maximum1, rev(minimum1)), border = FALSE, 
         col = "dark gray", ...)
-    lines(fts(x, notchlow), col = "blue",  ...)
-    lines(fts(x, notchupper), col = "blue", ...)
+    lines(fts(x, notchlow), col = "blue", lty = 2, ...)
+    lines(fts(x, notchupper), col = "blue", lty = 2, ...)
     lines(fts(x, centercurve), col = "black", ...)
     if (n > 0) {
         outliercurve <- y[outlier, ]

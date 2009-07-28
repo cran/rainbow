@@ -6,7 +6,7 @@ Compute bivariate bagplot, functional bagplot and bivariate HDR boxplot, functio
 }
 \usage{
 fboxplot(data, plot.type = c("functional", "bivariate"),type = c("bag",
- "hdr"), alpha = c(0.01, 0.5), h, factor = 2.57, na.rm = TRUE, 
+ "hdr"), alpha = c(0.01, 0.5), factor = 2.57, na.rm = TRUE, 
   xlab = data$xname, ylab = data$yname, ...) 
 }
 \arguments{
@@ -14,7 +14,6 @@ fboxplot(data, plot.type = c("functional", "bivariate"),type = c("bag",
   \item{plot.type}{Version of boxplot. When \code{plot.type="functional"}, a functional plot is provided. When \code{plot.type="bivariate"}, a square bivariate plot is provided.}
   \item{type}{Type of boxplot. When \code{type="bag"}, a bagplot is provided. When \code{type="hdr"}, a HDR boxplot is provided.}
   \item{alpha}{Coverage probability for the functional HDR boxplot. \eqn{\alpha}{alpha} are the coverage percentages of the outliers and the central region.}
-  \item{h}{When \code{type="hdr"}, bandwidth is selected by using the smoothed cross validation.}
   \item{factor}{When \code{type="bag"}, the outer region of a bagplot is the convex hull obtained by inflating the inner region by the bagplot factor.}
   \item{na.rm}{Remove missing values.}
   \item{xlab}{A title for the x axis.}

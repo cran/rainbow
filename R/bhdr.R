@@ -1,12 +1,9 @@
-bhdr <- function (data, alpha = c(0.01, 0.5), h, label = TRUE, ...) 
+bhdr <- function (data, alpha = c(0.01, 0.5), label = TRUE, ...) 
 {
     y = t(data$y)
-    sco = PCAproj(y, k = 2)$scores
-    if (missing(h)) 
-        h <- Hscv.diag(sco, binned = TRUE)
-    else h <- diag(h)
-        den <- kde(x = sco, H = h)
-        den <- list(x = den$eval.points[[1]], y = den$eval.points[[2]], 
+    sco = PCAproj(y, k = 2)$scores   
+    den <- kde(x = sco, H = 0.8 * Hscv.diag(sco, binned = TRUE))
+    den <- list(x = den$eval.points[[1]], y = den$eval.points[[2]], 
             z = den$estimate)
     hdr1 <- hdrcde:::hdr.info.2d(sco[, 1], sco[, 2], den, alpha = alpha)
     hdrcde:::plothdr2d(sco[, 1], sco[, 2], den, alpha, xlab = "PC score 1", 
@@ -25,5 +22,3 @@ bhdr <- function (data, alpha = c(0.01, 0.5), h, label = TRUE, ...)
     }
     return(outliers)
 }
-
-
