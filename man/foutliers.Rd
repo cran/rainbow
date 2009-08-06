@@ -10,7 +10,7 @@ foutliers(data, method = c("robMah", "lrt", "depth.trim", "depth.pond",
   order = 2, lambda = 3.29,...)
 }
 \arguments{
-  \item{data}{An object of class \code{\link[rainbow]{fd}} or \code{fts}.}
+  \item{data}{An object of class \code{\link[rainbow]{fds}} or \code{fts} or \code{sfts}.}
   \item{method}{Outlier detection method.}
   \item{dfunc}{When \code{method="lrt"} or \code{method="depth.trim"} or \code{method="depth.pond"},
                users can specify the type of depth functions with possible choices of depth.FM, depth.mode, depth.RP, depth.RPD.}
@@ -50,6 +50,8 @@ R. J. Hyndman and M. S. Ullah (2007) "Robust forecasting of mortality and fertil
 M. Febrero and P. Galeano and W. Gonzalez-Manteiga (2007) "A functional analysis of NOx levels: location and scale estimation and outlier detection", \emph{Computational Statistics}, \bold{22}(3), 411-427.
 
 M. Febrero and P. Galeano and W. Gonzalez-Manteiga (2008) "Outlier detection in functional data by depth measures, with application to identify abnormal NOx levels", \emph{Environmetrics}, \bold{19}(4), 331-345.
+
+R. J. Hyndman and H. Shang. (2008) "Rainbow plots, bagplots, and boxplots for functional data", \emph{Tech. rep. Department of Econometrics \& Business Statistics}, Monash University, November 2008, \url{http://www.buseco.monash.edu.au/depts/ebs/pubs/wpapers/2008/9-08.php}.
 }
 \author{Han Lin Shang}
 \examples{

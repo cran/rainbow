@@ -8,7 +8,7 @@ Compute functional depth.
 fdepth(data, type = c("FM", "mode", "RP", "RPD"), trim = 0.25)
 }
 \arguments{
-  \item{data}{An object of class \code{\link[rainbow]{fd}} or \code{fts}.}
+  \item{data}{An object of class \code{\link[rainbow]{fds}} or \code{fts} or \code{sfts}.}
   \item{type}{Type of functional depth.}
   \item{trim}{Percentage of trimming.}
 }
@@ -39,7 +39,7 @@ A. Cuevas and M. Febrero and R. Fraiman (2006) "On the use of bootstrap for esti
 
 A. Cuevas and M. Febrero and R. Fraiman (2007) "Robust estimation and classification for functional data via projection-based depth notions", \emph{Computational Statistics}, \bold{22}(3), 481-496.
 
-R. Fraiman and G. Muniz (2001) "Trimmed means for functional data", \emph{Test}, \bold{10}, 419-440.
+R. Fraiman and G. Muniz (2001) "Trimmed means for functional data", \emph{Test}, \bold{10}(2), 419-440.
 
 M. Febrero and P. Galeano and W. Gonzalez-Manteiga (2008) "Outlier detection in functional data by depth measures, with application to identify abnormal NOx levels", \emph{Environmetrics}, \bold{19}(4), 331-345.
 }

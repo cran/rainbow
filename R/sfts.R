@@ -1,4 +1,5 @@
-`fts` <- function (x, y, start = 1, frequency = 1, xname, yname) 
+`sfts` <-
+function (x, y, start = 1, frequency = 1, xname, yname) 
 {
     if (missing(xname)) 
         xname <- deparse(substitute(x))
@@ -7,13 +8,7 @@
     y <- as.matrix(y)
     if (length(x) != nrow(y)) 
         stop("Dimensions do not match")
-    if (length(colnames(y))==0){         
-        ytimes <- time(ts(rep(NA, ncol(y)), s = start, f = frequency))
-    }
-    else{
-        dumm <- as.numeric(colnames(y))
-        ytimes <- ts(dumm, s = dumm[1], f = frequency)
-    }
+    ytimes <- time(ts(rep(NA, ncol(y)), s = start, f = frequency))
     if (max(abs(ytimes - floor(ytimes))) < 1e-09) 
         ylab <- paste(ytimes)
     else if (frequency == 4) 
@@ -30,8 +25,7 @@
     colnames(y) <- ylab
     rownames(y) <- x
     return(structure(list(x = x, y = y, time = ytimes, xname = xname, 
-        yname = yname), class = c("fts","fds")))
+        yname = yname), class = "sfts"))
 
 }
-
 

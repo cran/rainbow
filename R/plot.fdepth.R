@@ -1,5 +1,6 @@
-plot.fdepth <- function(x, show.legend = TRUE, pos.legend = "bottomleft", ...){
-  plot.fd(x$data, col = gray(.7), ...)
+plot.fdepth <- function(x, show.legend = TRUE, pos.legend = "bottomleft", ...)
+{
+  plot(x$data, col = gray(.7), ...)
   lines(x$output$median, col = "red", ...)
   lines(x$output$mtrim, col = "blue", ...)
   if (show.legend){
