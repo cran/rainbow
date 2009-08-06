@@ -1,13 +1,13 @@
-\name{fd}
-\alias{fd}
+\name{fds}
+\alias{fds}
 \alias{fts}
 \title{Create functional objects}
 \description{
-\code{fd} is used to create functional data sets. 
-\code{fts} is used to create functional time series. 
+The function \code{fds} is used to create general functional objects that are not ordered by time.
+The function \code{fts} is used to create functional time series objects.
 }
 \usage{
-fd(x, y, xname, yname)
+fds(x, y, xname, yname)
 fts(x, y, start = 1, frequency = 1, xname, yname)
 }
 \arguments{
@@ -21,10 +21,11 @@ fts(x, y, start = 1, frequency = 1, xname, yname)
 \item{xname}{Character string giving name of \code{x} vector. (optional)}
 \item{yname}{Character string giving name of \code{y} vector. (optional)}
 }
-\value{An object of class \code{fd} or \code{fts}.}
+\value{An object of class \code{fds} or \code{fts}.}
 \author{Rob J Hyndman}
 \examples{
-fts(x = 1:12, y = ElNino$y, xname = "Month", yname = "Sea surface temperature")
+fts(x = 0:100, y = Francesmoothmortality$y, xname = "Age", 
+    yname = "Log mortality rates")
 }
 \keyword{ts}
 

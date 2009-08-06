@@ -10,7 +10,7 @@ fboxplot(data, plot.type = c("functional", "bivariate"),type = c("bag",
   xlab = data$xname, ylab = data$yname, ...) 
 }
 \arguments{
-  \item{data}{An object of class \code{\link[rainbow]{fd}} or \code{fts}.}
+  \item{data}{An object of class \code{\link[rainbow]{fds}} or \code{fts} or \code{sfts}.}
   \item{plot.type}{Version of boxplot. When \code{plot.type="functional"}, a functional plot is provided. When \code{plot.type="bivariate"}, a square bivariate plot is provided.}
   \item{type}{Type of boxplot. When \code{type="bag"}, a bagplot is provided. When \code{type="hdr"}, a HDR boxplot is provided.}
   \item{alpha}{Coverage probability for the functional HDR boxplot. \eqn{\alpha}{alpha} are the coverage percentages of the outliers and the central region.}
@@ -27,12 +27,14 @@ Hyndman (1996)'s HDR boxplot, we order each data point in \eqn{R^2} by data dept
 Outliers are those that have either lowest depth or lowest density.
 }
 \value{
-NULL.
+Function produces a plot.
 }
 \references{
-J. W. Tukey (1974) "Mathematics and the picturing of data", \emph{Proceedings of the International Congress of Mathematicians}, \emph{2}, 523-532, Canadian Mathematical Congress, Montreal.
+J. W. Tukey (1974) "Mathematics and the picturing of data", \emph{Proceedings of the International Congress of Mathematicians}, \bold{2}, 523-532, Canadian Mathematical Congress, Montreal.
 
-R. Hyndman (1996) "Computing and graphing highest density regions", \emph{The American Statistician}, \emph{50}, 120-126.
+P. Rousseeuw, I. Ruts and J. Tukey (1999) "The bagplot: A bivariate boxplot", \emph{The American Statistician}, \bold{53}(4), 382-387.
+
+R. J. Hyndman (1996) "Computing and graphing highest density regions", \emph{The American Statistician}, \bold{50}(2), 120-126.
 
 R. J. Hyndman and H. L. Shang. (2008) "Rainbow plots, bagplots, and boxplots for functional data", \emph{Tech. rep. Department of Econometrics \& Business Statistics}, Monash University, November 2008, \url{http://www.buseco.monash.edu.au/depts/ebs/pubs/wpapers/2008/9-08.php}.
 }

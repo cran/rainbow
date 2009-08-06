@@ -13,7 +13,7 @@ data(Australiafertility)
 data(Australiasmoothfertility)
 }
 \format{
-An object of class \code{\link[rainbow]{fd}} and \code{fts}.
+An object of class \code{\link[rainbow]{fds}} and \code{fts}.
 }
 \details{
 Australian fertility rates and populations (1921-2006) for age groups (15-49) were obtained from the Australian
@@ -30,6 +30,8 @@ The Australian Demographic Data Bank (courtesy of Len Smith).
 R. J. Hyndman and M. S. Ullah (2007) "Robust forecasting of mortality and fertility rates: A functional data approach", \emph{Computational Statistics and Data Analysis}, \bold{51}(10), 4942-4956.
 
 R. J. Hyndman and H. Booth (2008) "Stochastic population forecasts using functional data models for mortality, fertility and migration", \emph{International Journal of Forecasting}, \bold{24}(3), 323-342.
+
+R. J. Hyndman and H. Shang (2009) "Forecasting functional time series (with discussion)", \emph{Journal of the Korean Statistical Society}, \bold{38}(3), 199-221.
 }
 \author{Han Lin Shang}
 \examples{

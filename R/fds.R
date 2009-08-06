@@ -1,4 +1,4 @@
-fd <- function (x, y, xname, yname) 
+fds <- function (x, y, xname, yname) 
 {
     if (missing(xname)) 
         xname <- deparse(substitute(x))
@@ -8,5 +8,5 @@ fd <- function (x, y, xname, yname)
     if (length(x) != nrow(y)) 
         stop("Dimensions do not match")
     return(structure(list(x = x, y = y, xname = xname, 
-        yname = yname), class = "fd"))
+        yname = yname), class = "fds"))
 }
