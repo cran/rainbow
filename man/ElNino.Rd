@@ -7,7 +7,7 @@ Monthly sea surface temperatures from January 1951 to December 2007.
 }
 \usage{data(ElNino)}
 \format{
-An object of class \code{\link[rainbow]{sfts}}.
+An object of class \code{sfts}.
 }
 \details{
 These averaged monthly sea surface temperatures are measured by the different moored buoys in the "Nino region" defined by the coordinates 0-10 degree South and 90-80 degree West.

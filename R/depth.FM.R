@@ -1,10 +1,7 @@
-`depth.FM` <- function(data, trim, xeps = 0.00000001, x = NULL){
+`depth.FM` <- function(data, trim = 0.25, xeps = 0.00000001, x = NULL){
     functions = t(data$y)
     nrow <- dim(functions)[1]
     ncol <- dim(functions)[2]
-    if (missing(trim)){
-        trim = 0.25
-    }
     if(is.null(nrow) && is.null(ncol))
        stop("I do not have a matrix")
     if(is.null(x)) 
@@ -19,6 +16,7 @@
     med = functions[k,]
     lista = which(ans >= quantile(ans, probs = trim, na.rm = TRUE))
     mtrim = apply(functions[lista,], 2, mean)
-    return(list("median" = med, "lmed" = k, "mtrim" = mtrim, "ltrim" = lista, "prof" = ans))
+    return(list("median" = med, "lmed" = k, "mtrim" = mtrim, 
+           "ltrim" = lista, "prof" = ans))
 }
 

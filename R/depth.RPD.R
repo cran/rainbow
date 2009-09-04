@@ -1,4 +1,4 @@
-`depth.RPD` <- function (data, nproj = 50, deriv = c(0, 1), trim, 
+`depth.RPD` <- function (data, nproj = 50, deriv = c(0, 1), trim = 0.25, 
     dfunc2 = depth.RP, x = NULL, spline = TRUE, ...) 
 {
     functions = t(data$y)
@@ -6,9 +6,6 @@
         functions = as.matrix(functions)
     nr = nrow(functions)
     nc = ncol(functions)
-    if (missing(trim)){
-        trim = 0.25
-    }
     modulo = function(z) {
         sqrt(sum(z^2))
     }
@@ -29,7 +26,7 @@
                 }
                 else {
                   newfunc[i, , k] = c(rep(0, deriv[k]), diff(functions[i, 
-                    ], differences = deriv[k]))
+                                    ], differences = deriv[k]))
                 }
             }
         }
@@ -45,7 +42,7 @@
             matrx = newfunc[, , k]
             vproject[, k] = matrx %*% z[j, ]
         }
-        resul = dfunc2(fts(1:dim(vproject)[2],t(vproject)), trim = trim, ...)
+        resul = dfunc2(fts(1:dim(vproject)[2], t(vproject)), trim = trim, ...)
         prof = prof + resul$prof
     }
     prof = prof/nproj

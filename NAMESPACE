@@ -6,22 +6,16 @@ sfts,
 fboxplot,
 foutliers,
 plot.fds,
-plot.sfts,
 lines.fds,
-lines.sfts,
 points.fds,
-points.sfts,
 plot.fdepth
 )
 
 
 S3method(plot,fdepth)
 S3method(plot,fds)
-S3method(plot,sfts)
 S3method(lines,fds)
-S3method(lines,sfts)
 S3method(points,fds)
-S3method(points,sfts)
 S3method(print,fds)
 S3method(print,fts)
 S3method(print,sfts)

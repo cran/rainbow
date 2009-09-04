@@ -22,7 +22,7 @@ hossjercroux <- function (X, tol = 1e-06, maxstep = 100, na.rm = TRUE)
         oldmobj <- mrobj(X, mold)
         while ((mrobj(X, m) > oldmobj) & (nstep <= maxhalf)) {
             nstep <- nstep + 1
-            m <- mold + delta/(2^nstep)
+            m <- mold + delta / (2^nstep)
         }
         if (nstep > maxhalf)
             return(mold)

@@ -27,9 +27,9 @@ compute.bagplot = function (x, y, factor = 3, na.rm = FALSE, approx.limit = 300,
         return(!in.pg)
     }
     cut.z.pg <- function(zx, zy, p1x, p1y, p2x, p2y) {
-        a2 <- (p2y - p1y)/(p2x - p1x)
+        a2 <- (p2y - p1y) / (p2x - p1x)
         a1 <- zy/zx
-        sx <- (p1y - a2 * p1x)/(a1 - a2)
+        sx <- (p1y - a2 * p1x) / (a1 - a2)
         sy <- a1 * sx
         sxy <- cbind(sx, sy)
         h <- any(is.nan(sxy)) || any(is.na(sxy)) || any(Inf == 
@@ -47,16 +47,16 @@ compute.bagplot = function (x, y, factor = 3, na.rm = FALSE, approx.limit = 300,
             sy <- ifelse(h, p2y, sy)
             h <- p1x == p2x & zx != p1x & p1x != 0
             sx <- ifelse(h, p1x, sx)
-            sy <- ifelse(h, zy * p1x/zx, sy)
+            sy <- ifelse(h, zy * p1x / zx, sy)
             h <- p1x == p2x & zx != p1x & p1x == 0
             sx <- ifelse(h, p1x, sx)
             sy <- ifelse(h, 0, sy)
             h <- p1x == p2x & zx == p1x & p1x == 0 & sign(zy) == 
-                sign(p1y)
+                 sign(p1y)
             sx <- ifelse(h, p1x, sx)
             sy <- ifelse(h, p1y, sy)
             h <- p1x == p2x & zx == p1x & p1x == 0 & sign(zy) != 
-                sign(p1y)
+                 sign(p1y)
             sx <- ifelse(h, p1x, sx)
             sy <- ifelse(h, p2y, sy)
             h <- zx == p1x & zy == p1y
@@ -75,7 +75,7 @@ compute.bagplot = function (x, y, factor = 3, na.rm = FALSE, approx.limit = 300,
         if (debug.plots == "all") {
             segments(sxy[, 1], sxy[, 2], zx, zy, col = "red")
             segments(0, 0, sxy[, 1], sxy[, 2], type = "l", col = "green", 
-                lty = 2)
+                     lty = 2)
             points(sxy, col = "red")
         }
         return(sxy)
@@ -124,7 +124,7 @@ compute.bagplot = function (x, y, factor = 3, na.rm = FALSE, approx.limit = 300,
             a <- a[h]
             ident <- sum(!h)
             init <- sum(a < pi)
-            a.shift <- (a + pi)%%dpi
+            a.shift <- (a + pi) %% dpi
             minusplus <- c(rep(-1, length(a)), rep(1, length(a)))
             h <- cumsum(minusplus[order(c(a, a.shift))])
             tphdepth[j] <- init + min(h) + 1
@@ -137,7 +137,7 @@ compute.bagplot = function (x, y, factor = 3, na.rm = FALSE, approx.limit = 300,
         pg0 <- pg0[chull(pg0[, 1], pg0[, 2]), ]
         end.points <- find.cut.z.pg(pg, pg0, center = center, 
             debug.plots = debug.plots)
-        lam <- ((0:resolution)^1)/resolution^1
+        lam <- ((0 : resolution)^1) / resolution^1
         pg.new <- pg
         for (i in 1:nrow(pg)) {
             tp <- cbind(pg[i, 1] + lam * (end.points[i, 1] - 
@@ -178,7 +178,7 @@ compute.bagplot = function (x, y, factor = 3, na.rm = FALSE, approx.limit = 300,
     }
     cut.p.sl.p.sl <- function(xy1, m1, xy2, m2) {
         sx <- (xy2[2] - m2 * xy2[1] - xy1[2] + m1 * xy1[1])/(m1 - 
-            m2)
+               m2)
         sy <- xy1[2] - m1 * xy1[1] + m1 * sx
         if (!is.nan(sy)) 
             return(c(sx, sy))
@@ -190,15 +190,15 @@ compute.bagplot = function (x, y, factor = 3, na.rm = FALSE, approx.limit = 300,
     pos.to.pg <- function(z, pg, reverse = FALSE) {
         if (reverse) {
             int.no <- apply(outer(pg[, 1], z[, 1], ">="), 2, 
-                sum)
+                            sum)
             zy.on.pg <- pg[int.no, 2] + pg[int.no, 3] * (z[, 
-                1] - pg[int.no, 1])
+                        1] - pg[int.no, 1])
         }
         else {
             int.no <- apply(outer(pg[, 1], z[, 1], "<="), 2, 
-                sum)
+                      sum)
             zy.on.pg <- pg[int.no, 2] + pg[int.no, 3] * (z[, 
-                1] - pg[int.no, 1])
+                        1] - pg[int.no, 1])
         }
         ifelse(z[, 2] < zy.on.pg, "lower", "higher")
     }
@@ -224,7 +224,7 @@ compute.bagplot = function (x, y, factor = 3, na.rm = FALSE, approx.limit = 300,
     if (any(is.na(xydata))) {
         if (na.rm) {
             xydata <- xydata[!apply(is.na(xydata), 1, any), , 
-                drop = FALSE]
+                            drop = FALSE]
             print("Warning: NA elements have been removed!!")
         }
         else {
@@ -295,7 +295,7 @@ compute.bagplot = function (x, y, factor = 3, na.rm = FALSE, approx.limit = 300,
         h <- a < 10
         a <- a[h]
         init <- sum(a < mypi)
-        a.shift <- (a + pi)%%dpi
+        a.shift <- (a + pi) %% dpi
         minusplus <- c(rep(-1, length(a)), rep(1, length(a)))
         h <- cumsum(minusplus[order(c(a, a.shift))])
         hdepth[j] <- init + min(h) + 1
@@ -312,19 +312,19 @@ compute.bagplot = function (x, y, factor = 3, na.rm = FALSE, approx.limit = 300,
             a <- alpha[, j] + pi
             a <- a[a < 10]
             init <- sum(a < pi)
-            a.shift <- (a + pi)%%dpi
+            a.shift <- (a + pi) %% dpi
             minusplus <- c(rep(-1, length(a)), rep(1, length(a)))
             h <- cumsum(minusplus[ao <- (order(c(a, a.shift)))])
             no <- which((init + min(h)) == (init + h))[1]
             p <- xy[j, ]
             dy <- dx * tan(alpha[, j])
             segments(p[1] - dx, p[2] - dy, p[1] + dx, p[2] + 
-                dy, col = j, lty = 3)
+                     dy, col = j, lty = 3)
             dy <- dx * tan(c(sort(a), sort(a))[no])
             segments(p[1] - 5 * dx, p[2] - 5 * dy, p[1] + 5 * 
-                dx, p[2] + 5 * dy, col = "black")
+                     dx, p[2] + 5 * dy, col = "black")
             text(p[1] - xdelta * 0.02, p[2], hdepth[j], col = 1, 
-                cex = 2.5)
+                     cex = 2.5)
         }
     }
     hd.table <- table(sort(hdepth))
@@ -344,26 +344,26 @@ compute.bagplot = function (x, y, factor = 3, na.rm = FALSE, approx.limit = 300,
         cat("end of computation of k, k=", k)
     }
     center <- apply(xy[which(hdepth == max(hdepth)), , drop = FALSE], 
-        2, mean)
+                    2, mean)
     hull.center <- NULL
     if (5 < nrow(xy) && length(hd.table) > 2) {
         n.p <- floor(c(32, 16, 8)[1 + (n > 50) + (n > 200)] * 
-            precision)
+                     precision)
         h <- cands <- xy[rev(order(hdepth))[1:6], ]
         cands <- cands[chull(cands[, 1], cands[, 2]), ]
         n.c <- nrow(cands)
         if (is.null(n.c)) 
             cands <- h
         xyextr <- rbind(apply(cands, 2, min), apply(cands, 2, 
-            max))
+                        max))
         xydel <- 2 * (xyextr[2, ] - xyextr[1, ])/n.p
         h1 <- seq(xyextr[1, 1], xyextr[2, 1], length = n.p)
         h2 <- seq(xyextr[1, 2], xyextr[2, 2], length = n.p)
         tp <- cbind(matrix(h1, n.p, n.p)[1:n.p^2], matrix(h2, 
-            n.p, n.p, TRUE)[1:n.p^2])
+                    n.p, n.p, TRUE)[1:n.p^2])
         tphdepth <- max(hdepth.of.points(tp, n)) - 1
         num <- floor(c(417, 351, 171, 85, 67, 43)[sum(n > c(1, 
-            50, 100, 150, 200, 250))] * precision)
+                     50, 100, 150, 200, 250))] * precision)
         num.h <- floor(num/2)
         angles <- seq(0, pi, length = num.h)
         ang <- tan(pi/2 - angles)
@@ -401,22 +401,22 @@ compute.bagplot = function (x, y, factor = 3, na.rm = FALSE, approx.limit = 300,
             if (abs(angtan) > 1e+10) {
                 pg.no <- sum(pg[, 1] < pnew[1])
                 cutp <- c(pnew[1], pg[pg.no, 2] + pg[pg.no, 3] * 
-                  (pnew[1] - pg[pg.no, 1]))
+                        (pnew[1] - pg[pg.no, 1]))
                 pg.nol <- sum(pgl[, 1] >= pnewl[1])
                 cutpl <- c(pnewl[1], pgl[pg.nol, 2] + pgl[pg.nol, 
-                  3] * (pnewl[1] - pgl[pg.nol, 1]))
+                         3] * (pnewl[1] - pgl[pg.nol, 1]))
             }
             else {
                 pg.inter <- pg[, 2] - angtan * pg[, 1]
                 pnew.inter <- pnew[2] - angtan * pnew[1]
                 pg.no <- sum(pg.inter < pnew.inter)
                 cutp <- cut.p.sl.p.sl(pnew, ang[ia], pg[pg.no, 
-                  1:2], pg[pg.no, 3])
+                         1:2], pg[pg.no, 3])
                 pg.interl <- pgl[, 2] - angtan * pgl[, 1]
                 pnew.interl <- pnewl[2] - angtan * pnewl[1]
                 pg.nol <- sum(pg.interl > pnew.interl)
                 cutpl <- cut.p.sl.p.sl(pnewl, angtan, pgl[pg.nol, 
-                  1:2], pgl[pg.nol, 3])
+                         1:2], pgl[pg.nol, 3])
             }
             pg <- rbind(pg[1:pg.no, ], c(cutp, angtan), c(cutp[1] + 
                 dxy, cutp[2] + angtan * dxy, NA))
@@ -469,7 +469,7 @@ compute.bagplot = function (x, y, factor = 3, na.rm = FALSE, approx.limit = 300,
             sl <- cut.p.sl.p.sl(xyl[1:2], xyl[3], xyu[1:2], xyu[3])
         }
         pg <- rbind(pg[indu == "higher", 1:2, drop = FALSE], 
-            sr, pgl[indl == "lower", 1:2, drop = FALSE], sl)
+                    sr, pgl[indl == "lower", 1:2, drop = FALSE], sl)
         if (debug.plots == "all") 
             lines(rbind(pg, pg[1, ]), col = "red")
         pg <- pg[chull(pg[, 1], pg[, 2]), ]
@@ -615,7 +615,7 @@ compute.bagplot = function (x, y, factor = 3, na.rm = FALSE, approx.limit = 300,
             lines(rbind(pg, pg[1, ]), col = "red")
         pg <- pg[chull(pg[, 1], pg[, 2]), ]
         exp.dk <- cbind(pg[, 1] * xysd[1] + xym[1], pg[, 2] * 
-            xysd[2] + xym[2])
+                        xysd[2] + xym[2])
         if (kkk > 1) 
             kkk <- kkk - 1
         ia <- 1

@@ -49,6 +49,8 @@ Department of Econometrics \& Business Statistics}, Monash University, November 
 \examples{
 plot(x = Francesmoothmortality, plot.type = "functions")
 lines(x = Francesmoothmortality, plot.type = "functions", index = 3)
+plot(x = ElNino, plot.type = "functions")
+lines(x = ElNino, plot.type = "functions", index = 3)
 }
 \keyword{hplot}
 

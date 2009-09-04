@@ -6,7 +6,7 @@
         cat(paste("\n x:", x$xname, "\n"))
     }
     else {
-         stop("object is not a functional time series")
+         stop("object is not a functional time series.")
     }
 }
 

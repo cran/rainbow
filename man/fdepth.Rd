@@ -8,7 +8,7 @@ Compute functional depth.
 fdepth(data, type = c("FM", "mode", "RP", "RPD"), trim = 0.25)
 }
 \arguments{
-  \item{data}{An object of class \code{\link[rainbow]{fds}} or \code{fts} or \code{sfts}.}
+  \item{data}{An object of class \code{\link[rainbow]{fds}} or \code{fts}.}
   \item{type}{Type of functional depth.}
   \item{trim}{Percentage of trimming.}
 }

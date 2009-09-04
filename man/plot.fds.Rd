@@ -45,6 +45,10 @@ plot(x = Francesmoothmortality, plot.type = "time")
 plot(x = Francesmoothmortality, plot.type = "depth")
 plot(x = Francesmoothmortality, plot.type = "density")
 plot(x = Francesmoothmortality, plot.type = "functions")
+plot(x = ElNino, plot.type = "time")
+plot(x = ElNino, plot.type = "depth")
+plot(x = ElNino, plot.type = "density")
+plot(x = ElNino, plot.type = "functions")
 }
 \keyword{hplot}
 

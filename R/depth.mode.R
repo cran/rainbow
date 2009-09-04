@@ -1,10 +1,7 @@
-`depth.mode` <- function(data, trim, h = 0.15, mdist = NULL, scale = TRUE, x = NULL, ...){
+`depth.mode` <- function(data, trim = 0.25, h = 0.15, mdist = NULL, scale = TRUE, x = NULL, ...){
   functions = t(data$y)
   nr <- nrow(functions)
   nc <- ncol(functions)
-  if (missing(trim)){
-      trim = 0.25
-  }
   if(is.null(x)) 
      x = 1:nc
      if(is.null(nr) && is.null(nc)) 
@@ -25,7 +22,8 @@
      k = which.max(ans)
      med = functions[k,]
      lista = which(ans >= quantile(ans, probs = trim, na.rm = TRUE))
-     mtrim = apply(functions[lista,],2,mean)
-     return(list("median" = med, "lmed" = k, "mtrim" = mtrim, "ltrim" = lista, "prof" = ans))
+     mtrim = apply(functions[lista,], 2, mean)
+     return(list("median" = med, "lmed" = k, "mtrim" = mtrim, 
+            "ltrim" = lista, "prof" = ans))
 }
 

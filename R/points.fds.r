@@ -1,10 +1,10 @@
 points.fds <- function (x, plot.type = c("functions", "time", "depth", "density"), index, labels = NULL, 
-                      label.cex = 0.7, col = NULL, pch = 1, ...) 
+                        label.cex = 0.7, col = NULL, pch = 1, ...) 
 {  
-    if (class(x)[1] == "fds"|class(x)[1] == "fts"){
+    if (class(x)[1] == "fds"|class(x)[1] == "fts"|class(x)[1] == "sfts"){
         plot.type <- match.arg(plot.type)
         if (plot.type == "time") {
-            if (class(x)[1] == "fts"){
+            if (class(x)[1] == "fts"|class(x)[1] == "sfts"){
                 if (is.null(col)) {
                     nx <- length(x$x)
                     palette(rainbow(nx))
@@ -21,7 +21,7 @@ points.fds <- function (x, plot.type = c("functions", "time", "depth", "density"
                 }
             }
             else {
-                 warning("object is not a functional time series")
+                 warning("object is not a functional time series.")
             }
         }
         else{
@@ -36,25 +36,25 @@ points.fds <- function (x, plot.type = c("functions", "time", "depth", "density"
             }
             yy <- as.matrix(x$y)
             if (plot.type == "depth"){
-                sco <- PCAproj(t(yy),k = 2)$score
+                sco <- PCAproj(t(yy), k = 2)$score
                 center <- compute.bagplot(sco)$center
-                dist <- order(mahalanobis(sco,center,cov(sco)))
+                dist <- order(mahalanobis(sco, center, cov(sco)))
                 matpoints(x$x, yy[,which(dist == index)], col = col, pch = pch, ...)
             }   
             if (plot.type == "density"){
-                sco <- PCAproj(t(yy),k = 2)$score
-                X <- cbind(sco[,1],sco[,2])
+                sco <- PCAproj(t(yy), k = 2)$score
+                X <- cbind(sco[,1], sco[,2])
                 h = Hscv.diag(X, binned = TRUE)
                 den = kde(x = X, H = h)
-                den = list(x=den$eval.points[[1]], y=den$eval.points[[2]], z=den$estimate)
-                den2 <- hdrcde:::hdr.info.2d(sco[,1], sco[,2], den, alpha=c(0.01,0.5))
-                dist <- order(den2$fxy,decreasing = TRUE)
+                den = list(x = den$eval.points[[1]], y = den$eval.points[[2]], z = den$estimate)
+                den2 <- hdrcde:::hdr.info.2d(sco[,1], sco[,2], den, alpha = c(0.01,0.5))
+                dist <- order(den2$fxy, decreasing = TRUE)
                 matpoints(x$x, yy[,which(dist == index)], col = col, pch = pch, ...)
             }
         }
     }
     else{
-         stop("object is not a functional time series or a functional data set")
+         stop("object is not a functional model.")
     }
 }
     

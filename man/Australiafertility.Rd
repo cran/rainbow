@@ -13,7 +13,7 @@ data(Australiafertility)
 data(Australiasmoothfertility)
 }
 \format{
-An object of class \code{\link[rainbow]{fds}} and \code{fts}.
+An object of class \code{fts}.
 }
 \details{
 Australian fertility rates and populations (1921-2006) for age groups (15-49) were obtained from the Australian
