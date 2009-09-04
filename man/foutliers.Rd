@@ -10,7 +10,7 @@ foutliers(data, method = c("robMah", "lrt", "depth.trim", "depth.pond",
   order = 2, lambda = 3.29,...)
 }
 \arguments{
-  \item{data}{An object of class \code{\link[rainbow]{fds}} or \code{fts} or \code{sfts}.}
+  \item{data}{An object of class \code{\link[rainbow]{fds}} or \code{fts}.}
   \item{method}{Outlier detection method.}
   \item{dfunc}{When \code{method="lrt"} or \code{method="depth.trim"} or \code{method="depth.pond"},
                users can specify the type of depth functions with possible choices of depth.FM, depth.mode, depth.RP, depth.RPD.}

@@ -13,7 +13,7 @@ data(Francemortality)
 data(Francesmoothmortality)
 }
 \format{
-An object of class \code{\link[rainbow]{fds}} and \code{fts}.
+An object of class \code{fts}.
 }
 \details{
 Francesmoothmortality is the smoothed version of Francemortality data. The smoothing technique is the penalized regression spline with monotonic constraint, described in Hyndman and Ullah (2007).  

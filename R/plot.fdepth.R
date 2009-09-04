@@ -4,7 +4,8 @@ plot.fdepth <- function(x, show.legend = TRUE, pos.legend = "bottomleft", ...)
   lines(x$output$median, col = "red", ...)
   lines(x$output$mtrim, col = "blue", ...)
   if (show.legend){
-      legend(pos.legend,legend=c("Trimmed mean","Median"),lty = 1, col = c("blue","red"), ...) 
+      legend(pos.legend, legend = c("Trimmed mean", "Median"), lty = 1, 
+             col = c("blue", "red"), ...) 
   } 
 }
 

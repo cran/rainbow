@@ -1,7 +1,7 @@
 `rapca` <- function (x, FUN = Qn, order = 4, mean = TRUE)
 {
     if (order < 1)
-        stop("Order must be positive")
+        stop("Order must be positive.")
     X <- t(x)
     n <- nrow(X)
     p <- ncol(X)

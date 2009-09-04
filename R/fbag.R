@@ -14,27 +14,24 @@ fbag <- function (data, factor = 2.57, xlim = NULL, ylim = range(data$y, na.rm =
     maximum2 <- apply(outcurve, 2, max)
     minimum2 <- apply(outcurve, 2, min)
     p = dim(y)[2]
-    up = matrix(, p, 1)
+    low = up = matrix(, p, 1)
     for (i in 1:p) {
         up[i, ] = quantile(outcurve[, i], probs = 0.75)
-    }
-    low = matrix(, p, 1)
-    for (i in 1:p) {
         low[i, ] = quantile(outcurve[, i], probs = 0.25)
     }
     IQR = up - low
     dist <- (rob[, 1] - pcbag$center[1])^2 + (rob[, 2] - pcbag$center[2])^2
     center <- order(dist)[1]
     centercurve <- y[center, ]
-    notchlow <- centercurve - 1.57 * (IQR)/sqrt(nrow(y))
-    notchupper <- centercurve + 1.57 * (IQR)/sqrt(nrow(y))
+    notchlow <- centercurve - 1.57 * (IQR) / sqrt(nrow(y))
+    notchupper <- centercurve + 1.57 * (IQR) / sqrt(nrow(y))
     n <- length(outlier)
     plot(c(x, rev(x)), c(maximum2, rev(minimum2)), type = "n", 
-        main = "", ylim = ylim, xlab = xlab, ylab = ylab, ...)
+         main = "", ylim = ylim, xlab = xlab, ylab = ylab, ...)
     polygon(c(x, rev(x)), c(maximum2, rev(minimum2)), border = FALSE, 
-        col = "light gray", ylim = ylim, ...)
+            col = "light gray", ylim = ylim, ...)
     polygon(c(x, rev(x)), c(maximum1, rev(minimum1)), border = FALSE, 
-        col = "dark gray", ...)
+            col = "dark gray", ...)
     lines(fts(x, notchlow), col = "blue", lty = 2, ...)
     lines(fts(x, notchupper), col = "blue", lty = 2, ...)
     lines(fts(x, centercurve), col = "black", ...)

@@ -7,7 +7,7 @@
     y <- as.matrix(y)
     if (length(x) != nrow(y)) 
         stop("Dimensions do not match")
-    if (length(colnames(y))==0){         
+    if (length(colnames(y)) == 0){         
         ytimes <- time(ts(rep(NA, ncol(y)), s = start, f = frequency))
     }
     else{

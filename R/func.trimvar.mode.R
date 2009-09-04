@@ -2,6 +2,6 @@
 {
   functions = t(data$y)
   lista = depth.mode(data, trim = trim)$ltrim; 
-  func.var(functions[lista,])
+  func.var(functions[lista, ])
 }
 

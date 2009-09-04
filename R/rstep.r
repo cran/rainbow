@@ -1,7 +1,7 @@
 rstep <- function (x, FUN = Qn, order = 4, r = matrix.rank(x), mean = TRUE)
 {
     if (order < 1)
-        stop("Order must be positive")
+        stop("Order must be positive.")
     X <- t(x)
     p <- ncol(X)
     n <- nrow(X)
@@ -31,7 +31,7 @@ rstep <- function (x, FUN = Qn, order = 4, r = matrix.rank(x), mean = TRUE)
         if (ndiff > 1e-12) {
             if (sum(V[l:p, l] * Base[, 1]) < 0)
                 V[l:p, l] <- -V[l:p, l]
-            u <- matrix(Base[, 1] - V[l:p, l], ncol = 1)/c(norm(Base[,
+            u <- matrix(Base[, 1] - V[l:p, l], ncol = 1) / c(norm(Base[,
                 1] - V[l:p, l]))
             U <- Base - 2 * repmat(t(u) %*% Base, p - l + 1,
                 1) * repmat(u, 1, p - l + 1)

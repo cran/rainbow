@@ -10,7 +10,7 @@ fboxplot(data, plot.type = c("functional", "bivariate"),type = c("bag",
   xlab = data$xname, ylab = data$yname, ...) 
 }
 \arguments{
-  \item{data}{An object of class \code{\link[rainbow]{fds}} or \code{fts} or \code{sfts}.}
+  \item{data}{An object of class \code{\link[rainbow]{fds}} or \code{fts}.}
   \item{plot.type}{Version of boxplot. When \code{plot.type="functional"}, a functional plot is provided. When \code{plot.type="bivariate"}, a square bivariate plot is provided.}
   \item{type}{Type of boxplot. When \code{type="bag"}, a bagplot is provided. When \code{type="hdr"}, a HDR boxplot is provided.}
   \item{alpha}{Coverage probability for the functional HDR boxplot. \eqn{\alpha}{alpha} are the coverage percentages of the outliers and the central region.}

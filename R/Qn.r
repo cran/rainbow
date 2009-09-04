@@ -20,8 +20,8 @@ Qn <- function (x)
         dn <- 0.669
     else if (n == 9)
         dn <- 0.872
-    else if (n%%2 == 1)
-        dn <- n/(n + 1.4)
-    else dn <- n/(n + 3.8)
+    else if (n %% 2 == 1)
+        dn <- n / (n + 1.4)
+    else dn <- n / (n + 3.8)
     return(dn * qn)
 }

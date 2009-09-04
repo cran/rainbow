@@ -11,6 +11,6 @@ fdepth <- function(data, type = c("FM", "mode", "RP", "RPD"), trim = 0.25)
       output <- depth.RP(data, trim = trim)
   }
   else output <- depth.RPD(data, trim = trim)
-  return(structure(list(data=data, output=output), class="fdepth"))
+  return(structure(list(data = data, output = output), class = "fdepth"))
 }
 
