@@ -36,15 +36,15 @@ If \code{plot.type="depth"}, then functions are first ordered by depth and then 
 If \code{plot.type="density"}, then functions are first ordered by density and then plotted using a rainbow color palette.
 }
 \references{
-R. J. Hyndman and H. L. Shang. (2008) "Rainbow plots, bagplots, and boxplots for functional data", \emph{Tech. rep. Department of Econometrics \& Business Statistics}, Monash University, November 2008, \url{http://www.buseco.monash.edu.au/depts/ebs/pubs/wpapers/2008/9-08.php}.
+R. J. Hyndman and H. L. Shang. (2009) "Rainbow plots, bagplots, and boxplots for functional data", \emph{Journal of Computational and Graphical Statistics}, \bold{in press}.
 }
 \author{Rob J Hyndman, Han Lin Shang}
 \seealso{\code{\link[rainbow]{fds}}, \code{\link[rainbow]{lines.fds}}, \code{\link[rainbow]{points.fds}}}
 \examples{
-plot(x = Francesmoothmortality, plot.type = "time")
-plot(x = Francesmoothmortality, plot.type = "depth")
-plot(x = Francesmoothmortality, plot.type = "density")
-plot(x = Francesmoothmortality, plot.type = "functions")
+plot(x = Australiasmoothfertility, plot.type = "time")
+plot(x = Australiasmoothfertility, plot.type = "depth")
+plot(x = Australiasmoothfertility, plot.type = "density")
+plot(x = Australiasmoothfertility, plot.type = "functions")
 plot(x = ElNino, plot.type = "time")
 plot(x = ElNino, plot.type = "depth")
 plot(x = ElNino, plot.type = "density")

@@ -14,6 +14,8 @@ These averaged monthly sea surface temperatures are measured by the different mo
 }
 \source{
 National Weather Service Climate Prediction Center website at \url{http://www.cpc.ncep.noaa.gov/data/indices/sstoi.indices}. The data is the third column with the title NINO1+2.
+
+This data set can also be found at the NonParametric Functional Data Analysis website (\url{http://www.lsp.ups-tlse.fr/staph/npfda/}). 
 }
 \references{
 A. Antoniadis and T. Sapatinas (2003) "Wavelet methods for continuous-time prediction using Hilbert-valued autoregressive processes", \emph{Journal of Multivariate Analysis}, \bold{87}(1), 133-158.
@@ -24,9 +26,14 @@ F. Ferraty, A. Rabhi and P. Vieu (2005) "Conditional quantiles for dependent fun
 
 F. Ferraty and P. Vieu (2007) \emph{Nonparametric functional data analysis}, New York: Springer.
 
+R. J. Hyndman and H. L. Shang (2009) "Rainbow plots, bagplots, and boxplots for functional data", \emph{Journal of Computational and Graphical Statistics}, \bold{in press}.
+
 E. Moran, R. Adams, B. Bakoyema, S. Fiorini and B. Boucek (2006) "Human strategies for coping with El Nino related drought in Amazonia", \emph{Climatic Change}, \bold{77}(3-4), 343-361.
 
 A. Timmermann, J. Oberhuber, A. Bacher, M. Esch, M. Latif and E. Roeckner (1999) "Increased El Nino frequency in a climate model forced by future greenhouse warming", \emph{Nature}, \bold{398}(6729), 694-697.   
+}
+\note{
+We thank Professor Frederic Ferraty for the permission to re-distribute this data set.
 }
 \examples{
 plot(ElNino)

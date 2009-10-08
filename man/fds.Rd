@@ -28,18 +28,13 @@ sfts(data, period = frequency(data), start = tsp(data)[1], frequency = 1, xname,
 \item{yname}{Character string giving name of \code{y} vector. (optional)}
 }
 \value{An object of class \code{fds} or \code{fts} or \code{sfts}.}
-\note{
-\code{sfts} is a special type of \code{fts}.
-
-\code{fts} is a special type of \code{fds}.
-}
 \author{Rob J Hyndman}
 \examples{
-fds(x = 1:20, y = Simulationdata$y, xname = "x", yname = "Simulated values")
-fts(x = 0:100, y = Francesmoothmortality$y, xname = "Age", 
-    yname = "Log mortality rates")
+fds(x = 1:20, y = Simulationdata$y, xname = "x", yname = "Simulated value")
+fts(x = 15:49, y = Australiasmoothfertility$y, xname = "Age", 
+    yname = "Fertility rate")
 sfts(ts(as.numeric(ElNino$y), frequency = 12), xname = "Month", 
-     yname = "Sea surface temperatures")    
+     yname = "Sea surface temperature")    
 }
 \keyword{ts}
 
