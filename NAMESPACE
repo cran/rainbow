@@ -8,7 +8,8 @@ foutliers,
 plot.fds,
 lines.fds,
 points.fds,
-plot.fdepth
+plot.fdepth,
+SVDplot
 )
 
 
