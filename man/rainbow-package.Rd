@@ -14,7 +14,7 @@ Han Lin Shang and Rob J Hyndman
 Maintainer: Han Lin Shang <HanLin.Shang@buseco.monash.edu.au>
 }
 \references{
-R. J. Hyndman and H. L. Shang. (2009) "Rainbow plots, bagplots, and boxplots for functional data", \emph{Journal of Computational and Graphical Statistics}, \bold{in press}.
+R. J. Hyndman and H. L. Shang. (2010) "Rainbow plots, bagplots, and boxplots for functional data", \emph{Journal of Computational and Graphical Statistics}, \bold{in press}.
 }
 \keyword{package}
 

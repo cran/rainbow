@@ -22,3 +22,9 @@ v 1.5
 v 1.6
 
 1) Add the SVDplot function
+
+v 1.7
+
+1) Delete the dependency of ks package
+2) Correct the SVDplot function
+3) Correct the fts function

@@ -40,7 +40,7 @@ If \code{plot.type="density"}, then functions are first ordered by density and t
 palette.
 }
 \references{
-R. J. Hyndman and H. L. Shang. (2008) "Rainbow plots, bagplots, and boxplots for functional data", \emph{Journal of Computational and Graphical Statistics}, \bold{in press}.
+R. J. Hyndman and H. L. Shang. (2010) "Rainbow plots, bagplots, and boxplots for functional data", \emph{Journal of Computational and Graphical Statistics}, \bold{in press}.
 }
 \author{Rob J Hyndman, Han Lin Shang}
 \seealso{\code{\link[rainbow]{fds}}, \code{\link[rainbow]{plot.fds}}, \code{\link[rainbow]{points.fds}}}

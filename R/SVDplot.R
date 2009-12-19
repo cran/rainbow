@@ -53,6 +53,7 @@ function(object, order = 1, center = c("rowwise", "colwise", "double"), plot = T
       resi = newdata - apply(svdcomb, 1:2, sum)
   }
   if (plot == TRUE){
+      old.par <- par(no.readonly = TRUE)
       if(order == 0){
          par(mfrow = c(1,2))
          plot(fts(as.numeric(rownames(object$y)), datarowmean), xlab = object$xname, ylab = "SVD1")
@@ -73,6 +74,7 @@ function(object, order = 1, center = c("rowwise", "colwise", "double"), plot = T
          plot(fts(as.numeric(colnames(object$y)), t(approx)), xlab = "Time", ylab = "SVD approximation")
          plot(fts(as.numeric(colnames(object$y)), t(resi)), xlab = "Time", ylab = "Residual")
       }
+      on.exit(par(old.par)) 
   }
   else {
        if (order == 0){

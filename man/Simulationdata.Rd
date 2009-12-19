@@ -12,7 +12,7 @@ Simulated data used in Hyndman and Shang (2008).
 An object of class \code{\link[rainbow]{fds}}.
 }
 \references{
-R. J. Hyndman and H. L. Shang. (2009) "Rainbow plots, bagplots, and boxplots for functional data", \emph{Journal of Computational and Graphical Statistics}, \bold{in press}.
+R. J. Hyndman and H. L. Shang. (2010) "Rainbow plots, bagplots, and boxplots for functional data", \emph{Journal of Computational and Graphical Statistics}, \bold{in press}.
 }
 \examples{
 plot(Simulationdata, col = rainbow(100))

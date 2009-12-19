@@ -26,7 +26,7 @@ F. Ferraty, A. Rabhi and P. Vieu (2005) "Conditional quantiles for dependent fun
 
 F. Ferraty and P. Vieu (2007) \emph{Nonparametric functional data analysis}, New York: Springer.
 
-R. J. Hyndman and H. L. Shang (2009) "Rainbow plots, bagplots, and boxplots for functional data", \emph{Journal of Computational and Graphical Statistics}, \bold{in press}.
+R. J. Hyndman and H. L. Shang (2010) "Rainbow plots, bagplots, and boxplots for functional data", \emph{Journal of Computational and Graphical Statistics}, \bold{in press}.
 
 E. Moran, R. Adams, B. Bakoyema, S. Fiorini and B. Boucek (2006) "Human strategies for coping with El Nino related drought in Amazonia", \emph{Climatic Change}, \bold{77}(3-4), 343-361.
 
