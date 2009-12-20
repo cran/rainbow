@@ -36,7 +36,7 @@ P. Rousseeuw, I. Ruts and J. Tukey (1999) "The bagplot: A bivariate boxplot", \e
 
 R. J. Hyndman (1996) "Computing and graphing highest density regions", \emph{The American Statistician}, \bold{50}(2), 120-126.
 
-R. J. Hyndman and H. L. Shang. (2009) "Rainbow plots, bagplots, and boxplots for functional data", \emph{Journal of Computational and Graphical Statistics}, \bold{in press}.
+R. J. Hyndman and H. L. Shang. (2010) "Rainbow plots, bagplots, and boxplots for functional data", \emph{Journal of Computational and Graphical Statistics}, \bold{in press}.
 }
 \author{Rob J Hyndman, Han Lin Shang}
 \seealso{
