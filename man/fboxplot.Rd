@@ -7,7 +7,8 @@ Compute bivariate bagplot, functional bagplot and bivariate HDR boxplot, functio
 \usage{
 fboxplot(data, plot.type = c("functional", "bivariate"),type = c("bag",
  "hdr"), alpha = c(0.01, 0.5), factor = 2.57, na.rm = TRUE, 
-  xlab = data$xname, ylab = data$yname, ...) 
+  xlab = data$xname, ylab = data$yname, shadecols = gray((9:1)/10), 
+   pointcol = 1, ...) 
 }
 \arguments{
   \item{data}{An object of class \code{\link[rainbow]{fds}} or \code{fts}.}
@@ -18,6 +19,8 @@ fboxplot(data, plot.type = c("functional", "bivariate"),type = c("bag",
   \item{na.rm}{Remove missing values.}
   \item{xlab}{A title for the x axis.}
   \item{ylab}{A title for the y axis.}
+  \item{shadecols}{Colors for shaded regions.}
+  \item{pointcol}{Color for outliers and mode.}
   \item{...}{Other arguments.}
 }
 \details{

@@ -1,4 +1,4 @@
-bhdr <- function (data, alpha = c(0.01, 0.5), label = TRUE, ...) 
+bhdr <- function (data, alpha = c(0.01, 0.5), label = TRUE, shadecols, pointcol, ...) 
 {
     y = t(data$y)
     sco = PCAproj(y, k = 2)$scores   
@@ -6,7 +6,8 @@ bhdr <- function (data, alpha = c(0.01, 0.5), label = TRUE, ...)
     den <- list(x = den$eval.points[[1]], y = den$eval.points[[2]], 
             z = den$estimate)
     hdr1 <- hdrcde:::hdr.info.2d(sco[, 1], sco[, 2], den, alpha = alpha)
-    hdrcde:::plothdr2d(sco[, 1], sco[, 2], den, alpha, xlab = "PC score 1", 
+    hdrcde:::plothdr2d(sco[, 1], sco[, 2], den, alpha, shadecols = shadecols,
+        pointcol = pointcol, xlab = "PC score 1", 
         ylab = "PC score 2", show.points = FALSE, , xaxs = "i", 
         yaxs = "i", ...)
     points(sco[, 1], sco[, 2], pch = 16, cex = 0.5, col = 1)
@@ -22,3 +23,4 @@ bhdr <- function (data, alpha = c(0.01, 0.5), label = TRUE, ...)
     }
     return(outliers)
 }
+

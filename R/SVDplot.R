@@ -1,9 +1,7 @@
 SVDplot <-
 function(object, order = 1, center = c("rowwise", "colwise", "double"), plot = TRUE)
 {
-  if(missing(center)){
-     center = "rowwise"
-  }
+  center = match.arg(center)
   data = object$y
   p = dim(data)[1]
   n = dim(data)[2]
