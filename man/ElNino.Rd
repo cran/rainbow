@@ -1,11 +1,18 @@
 \name{ElNino}
 \alias{ElNino}
+\alias{ElNinosmooth}
 \docType{data}
 \title{Sea surface temperature data set}
 \description{
 Monthly sea surface temperatures from January 1951 to December 2007. 
+
+The monthly sea surface tmeperatures can be smoothed using smoothing spline with the smoothing parametric 
+determined by generalized cross validation. 
 }
-\usage{data(ElNino)}
+\usage{
+data(ElNino)
+data(ElNinosmooth)
+}
 \format{
 An object of class \code{sfts}.
 }
@@ -26,7 +33,7 @@ F. Ferraty, A. Rabhi and P. Vieu (2005) "Conditional quantiles for dependent fun
 
 F. Ferraty and P. Vieu (2007) \emph{Nonparametric functional data analysis}, New York: Springer.
 
-R. J. Hyndman and H. L. Shang (2010) "Rainbow plots, bagplots, and boxplots for functional data", \emph{Journal of Computational and Graphical Statistics}, \bold{in press}.
+R. J. Hyndman and H. L. Shang (2010) "Rainbow plots, bagplots, and boxplots for functional data", \emph{Journal of Computational and Graphical Statistics}, \bold{19}(1), 29-45.
 
 E. Moran, R. Adams, B. Bakoyema, S. Fiorini and B. Boucek (2006) "Human strategies for coping with El Nino related drought in Amazonia", \emph{Climatic Change}, \bold{77}(3-4), 343-361.
 
@@ -37,5 +44,6 @@ We thank Professor Frederic Ferraty for the permission to re-distribute this dat
 }
 \examples{
 plot(ElNino)
+plot(ElNinosmooth)
 }
 \keyword{datasets}
