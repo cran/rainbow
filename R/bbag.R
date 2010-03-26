@@ -2,6 +2,9 @@ bbag <- function(data, factor = 2.57, label = TRUE, ...){
   y <- t(data$y)
   sco <- PCAproj(y, k = 2)$scores
   tmp <- compute.bagplot(sco[,1], sco[,2], factor = factor,verbose = FALSE)
+  if (tmp$is.one.dim == TRUE){
+      warning("Bivariate principal component scores lie in one direction.")
+  }
   plot.bagplot(tmp, col.loophull = gray(.95), col.baghull = gray(.8),
        show.whiskers = FALSE, xlab = "PC score 1", ylab = "PC score 2",...)
   points(sco[,1], sco[,2], pch = 16, cex = 0.5, col = 1)
