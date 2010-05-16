@@ -12,10 +12,10 @@
                 }
                 if (xlab == x$xname){
                     xlab <- "Time"
-                    year = as.numeric(colnames(x$y))
-                    matplot(year, t(x$y), type = type, ylab = ylab, 
-                            xlab = xlab, col = col, lty = lty, pch = pch, ...)
                 }
+                year = as.numeric(colnames(x$y))
+                matplot(year, t(x$y), type = type, ylab = ylab, 
+                        xlab = xlab, col = col, lty = lty, pch = pch, ...)
             }
             else{
                 stop("object is not a functional time series.")
