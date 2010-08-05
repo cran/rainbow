@@ -1,5 +1,7 @@
 \name{plot.fds}
 \alias{plot.fds}
+\alias{lines.fds}
+\alias{points.fds}
 \title{Plot functional objects}
 \description{
 Plot functional curves.
@@ -7,7 +9,9 @@ Plot functional curves.
 \usage{
 \method{plot}{fds}(x, plot.type = c("functions", "time", "depth", "density"),
  labels = NULL, label.cex = 0.7, col = NULL, type = "l", lty = 1,
-  xlab = x$xname, ylab = x$yname, pch = c(1:9,0, letters, LETTERS), ...)
+  xlab = x$xname, ylab = x$yname, pch = c(1:9,0, letters, LETTERS), add = FALSE, index, ...)
+\method{lines}{fds}(x, type = "l", index, ...)
+\method{points}{fds}(x, type = "p", index, ...)  
 }
 \arguments{
 \item{x}{An object of class \code{\link[rainbow]{fds}} or \code{fts}.}
@@ -21,6 +25,8 @@ Plot functional curves.
 \item{xlab}{A title for x axis.}
 \item{ylab}{A title for y axis.}
 \item{pch}{Either an integer specifying a symbol or a single character to be used as the default in plotting points.}
+\item{add}{If \code{add = TRUE}, it plots a line or points.}
+\item{index}{Index of a specific curve that is plotted as a line or points.}
 \item{...}{Other plotting parameters passed to \code{\link[graphics]{par}}.}
 }
 \value{Function produces a plot.}
@@ -41,14 +47,13 @@ R. J. Hyndman and H. L. Shang. (2010) "Rainbow plots, bagplots, and boxplots for
 \author{Rob J Hyndman, Han Lin Shang}
 \seealso{\code{\link[rainbow]{fds}}, \code{\link[rainbow]{lines.fds}}, \code{\link[rainbow]{points.fds}}}
 \examples{
-plot(x = Australiasmoothfertility, plot.type = "time")
-plot(x = Australiasmoothfertility, plot.type = "depth")
-plot(x = Australiasmoothfertility, plot.type = "density")
-plot(x = Australiasmoothfertility, plot.type = "functions")
 plot(x = ElNino, plot.type = "time")
 plot(x = ElNino, plot.type = "depth")
 plot(x = ElNino, plot.type = "density")
 plot(x = ElNino, plot.type = "functions")
+lines(x = ElNino, plot.type = "functions", index = 3)
+points(x = ElNino, plot.type = "functions", index = 3)
+
 }
 \keyword{hplot}
 
