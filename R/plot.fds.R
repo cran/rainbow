@@ -7,8 +7,7 @@
             if (class(x)[1] == "fts"|class(x)[1] == "sfts"){
                 if (is.null(col)) {
                     nx <- length(x$x)
-                    palette(rainbow(min(1024, 1.25 * nx)))
-                    col = 1:nx
+                    col = rainbow(min(1024, 1.25 * nx))
                 }
                 if (xlab == x$xname){
                     xlab <- "Time"
@@ -32,8 +31,7 @@
             if (is.null(col)) {
                 ny <- ncol(as.matrix(x$y))
                 if (ny > 1)
-                    palette(rainbow(min(1024,1.25 * ny)))
-                    col <- 1:ny
+                    col <- rainbow(min(1024,1.25 * ny))
             }
             yy <- as.matrix(x$y)
             if (plot.type == "depth"){
@@ -74,7 +72,6 @@
 				    matlines(x$x, yy[,index], col = col, xlab = xlab, ylab = ylab, type = type, lty = lty, pch = pch, ...)
 				}
         }
-        palette("default") 
         }
    }
    else{
