@@ -10,8 +10,8 @@ Plot functional curves.
 \method{plot}{fds}(x, plot.type = c("functions", "time", "depth", "density"),
  labels = NULL, label.cex = 0.7, col = NULL, type = "l", lty = 1,
   xlab = x$xname, ylab = x$yname, pch = c(1:9,0, letters, LETTERS), add = FALSE, index, ...)
-\method{lines}{fds}(x, type = "l", index, col = "black", ...)
-\method{points}{fds}(x, type = "p", index, col = "black", ...)  
+\method{lines}{fds}(x, type = "l", index, ...)
+\method{points}{fds}(x, type = "p", index, ...)  
 }
 \arguments{
 \item{x}{An object of class \code{\link[rainbow]{fds}} or \code{fts}.}
@@ -19,8 +19,7 @@ Plot functional curves.
 \item{labels}{Character vector of length \code{length(y$x)}. If \code{plot.type="time"} then the
 	labels are printed beside each time plot.}
 \item{label.cex}{Character size for labels.}
-\item{col}{Colors to use in plot. Default in \code{plot.fds} is to use a rainbow color palette with the number of colors equal to the number of functions.
-In \code{lines.fds} and \code{points.fds}, the default color is black.}
+\item{col}{Colors to use in plot. Default in \code{plot.fds} is to use a rainbow color palette with the number of colors equal to the number of functions.}
 \item{type}{1-character string giving the type of plot desired.}
 \item{lty}{The line type.}
 \item{xlab}{A title for x axis.}

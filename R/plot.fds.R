@@ -31,7 +31,13 @@
             if (is.null(col)) {
                 ny <- ncol(as.matrix(x$y))
                 if (ny > 1)
+				{
                     col <- rainbow(min(1024,1.25 * ny))
+			    }
+				else
+				{
+				    col <- 1 
+			    }
             }
             yy <- as.matrix(x$y)
             if (plot.type == "depth"){
