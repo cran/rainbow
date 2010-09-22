@@ -1,3 +1,8 @@
+v 2.3 
+
+1) delete col = "black" argument in lines.fds and points.fds
+2) update col argument in plot.fds
+
 v 2.2
 
 1) change palatte() in plot.fds
