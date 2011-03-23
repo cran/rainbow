@@ -1,6 +1,6 @@
 bbag <- function(data, factor = 2.57, label = TRUE, ...){
   y <- t(data$y)
-  sco <- PCAproj(y, k = 2)$scores
+  sco <- PCAproj(y, k = 2, center = median)$scores
   tmp <- compute.bagplot(sco[,1], sco[,2], factor = factor,verbose = FALSE)
   if (tmp$is.one.dim == TRUE){
       warning("Bivariate principal component scores lie in one direction.")
@@ -21,4 +21,5 @@ bbag <- function(data, factor = 2.57, label = TRUE, ...){
       return(outliers)
   }
 }
+
 

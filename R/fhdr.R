@@ -1,7 +1,7 @@
 fhdr <- function (data, alpha = c(0.01, 0.5), label = TRUE, xlab, ylab, ...)
 {
     y = t(data$y)
-    sco = PCAproj(y, k = 2)$scores   
+    sco = PCAproj(y, k = 2, center = median)$scores   
     ylim = range(y, na.rm = TRUE)
     band = Hscv.diag(sco, binned = TRUE)
     if(any(diag(band) < 10^(-30))){
@@ -52,5 +52,4 @@ fhdr <- function (data, alpha = c(0.01, 0.5), label = TRUE, xlab, ylab, ...)
        return(outlier)
    }
 }
-
 

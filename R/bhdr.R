@@ -1,7 +1,7 @@
 bhdr <- function (data, alpha = c(0.01, 0.5), label = TRUE, shadecols, pointcol, ...) 
 {
     y = t(data$y)
-    sco = PCAproj(y, k = 2)$scores   
+    sco = PCAproj(y, k = 2, center = median)$scores   
     band = Hscv.diag(sco, binned = TRUE)
     if(any(diag(band) < 10^(-30))){
        stop("Computationally singular due to at least one of the diagonal elements of bandwidth matrix is very close to 0.")
@@ -11,7 +11,7 @@ bhdr <- function (data, alpha = c(0.01, 0.5), label = TRUE, shadecols, pointcol,
         den <- list(x = den$eval.points[[1]], y = den$eval.points[[2]], 
                     z = den$estimate)
         hdr1 <- hdrcde:::hdr.info.2d(sco[, 1], sco[, 2], den, alpha = alpha)
-        hdrcde:::plothdr2d(sco[, 1], sco[, 2], den, alpha, shadecols = shadecols,
+        hdrcde:::plothdr2d(sco[, 1], sco[, 2], den, alpha = alpha, shadecols = shadecols,
                pointcol = pointcol, xlab = "PC score 1", 
                ylab = "PC score 2", show.points = FALSE, , xaxs = "i", 
                yaxs = "i", ...)
@@ -29,4 +29,6 @@ bhdr <- function (data, alpha = c(0.01, 0.5), label = TRUE, shadecols, pointcol,
         return(outliers)
     }
 }
+
+
 
