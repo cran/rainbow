@@ -17,7 +17,7 @@ fboxplot <- function (data, plot.type = c("functional", "bivariate"), type = c("
     }
     if (plot.type == "bivariate") {
         par(pty="s")
-        sco = PCAproj(t(data$y))$scores 
+        sco = PCAproj(t(data$y), center = median)$scores 
         if (type == "bag") 
             bbag(data, factor, ...)
         else bhdr(data, alpha, shadecols = shadecols, pointcol = pointcol, ...)
@@ -28,3 +28,7 @@ fboxplot <- function (data, plot.type = c("functional", "bivariate"), type = c("
         on.exit(exit.restore()) 
     }
 }
+
+
+
+

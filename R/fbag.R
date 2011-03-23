@@ -2,7 +2,7 @@ fbag <- function (data, factor = 2.57, xlim = NULL, ylim = range(data$y, na.rm =
 { 
     y <- t(data$y)
     x <- data$x
-    rob <- PCAproj(y, k = 2)$score    
+    rob <- PCAproj(y, k = 2, center = median)$score    
     pcbag <- compute.bagplot(rob[, 1], rob[, 2], factor = factor)
     if(pcbag$is.one.dim == TRUE)
     {
@@ -47,5 +47,4 @@ fbag <- function (data, factor = 2.57, xlim = NULL, ylim = range(data$y, na.rm =
         }
    }
 }
-
 
