@@ -41,14 +41,14 @@
             }
             yy <- as.matrix(x$y)
             if (plot.type == "depth"){
-                sco <- PCAproj(t(yy), k = 2)$score
+                sco <- PCAproj(t(yy), k = 2, center = median)$score
                 center <- compute.bagplot(sco)$center
                 lineindex <- order(mahalanobis(sco, center, cov(sco)))
                 yy <- yy[,lineindex]
                 yymax <- yy[,1]
             }   
             else if (plot.type == "density"){
-                     sco <- PCAproj(t(yy), k = 2)$score
+                     sco <- PCAproj(t(yy), k = 2, center = median)$score
                      X <- cbind(sco[,1], sco[,2])
                      h = Hscv.diag(X, binned = TRUE)
                      den = kde(x = X, H = h)
