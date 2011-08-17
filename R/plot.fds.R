@@ -1,5 +1,4 @@
-`plot.fds` <- function (x, plot.type = c("functions", "time", "depth", "density"), labels = NULL, label.cex = 0.7, 
-        col = NULL, type = "l", lty = 1, xlab = x$xname, ylab = x$yname, pch = c(1:9,0, letters, LETTERS), add = FALSE, index, ...)
+`plot.fds` <- function (x, plot.type = c("functions", "time", "depth", "density"), col = NULL, type = "l", lty = 1, xlab = x$xname, ylab = x$yname, pch = c(1:9,0, letters, LETTERS), add = FALSE, index, ...)
 {
     if (class(x)[1] == "fts"|class(x)[1] == "fds"|class(x)[1] == "sfts"){
         plot.type <- match.arg(plot.type)    
