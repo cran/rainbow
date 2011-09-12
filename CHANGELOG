@@ -1,3 +1,16 @@
+v 2.4
+
+1) Update the SVD function. The argument plot = FALSE would return a series of SVDs, reconstruction plot, and residual plot.
+
+2) Update the plot.fds function. The argument plotlegend = TRUE would add a legend to the figure. When 
+   plot.type = "function", the legend displays the first curve, middle curve, last curve ordered by time.
+   When plot.type = "depth", the legend displays the least depth curve, middle depth curve and median curve.
+   When plot.type = "density", the legend displays the least populated curve, middle populated curve and mode curve.
+
+3) Update the fboxplot function. The argument plotlegend = TRUE would add a legend to the figure. 
+
+4) Update rainbow:::bbag function to display principal component scores in eqscplot.
+
 v 2.3.5
 
 1) Update plot.fds function

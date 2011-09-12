@@ -9,7 +9,8 @@ The singular value decomposition (SVD) plot of Zhang et al. (2007) captures the 
 singular columns as the number of curves gradually increases. 
 }
 \usage{
-SVDplot(object, order = 3, plot = TRUE, plot.type = c("fts", "image"), mfrow = c(2, 3))
+SVDplot(object, order = 3, plot = TRUE, plot.type = c("fts", "image"),
+        mfrow = c(2, 3))
 }
 \arguments{
   \item{object}{An object of \code{\link[rainbow]{fds}}.}
@@ -38,7 +39,7 @@ When \code{plot = FALSE}, it returns the following:
 \references{
 L. Zhang, J. Marron, H. Shen and Z. Zhu (2007) "Singular value decomposition and its visualization", \emph{Journal of Computational and Graphical Statistics}, \bold{16}(4), 833-854.
 
-A. Grahn (2009) "The animate Package", \url{http://ctan.unsw.edu.au/macros/latex/contrib/animate/animate.pdf}.
+A. Grahn (2011) "The animate Package", \url{http://ctan.unsw.edu.au/macros/latex/contrib/animate/animate.pdf}.
 }
 \author{
 Han Lin Shang
@@ -46,13 +47,13 @@ Han Lin Shang
 \note{
 MATLAB code is available at \url{http://www.unc.edu/~lszhang/research/network/SVDmovie/}.
 
-Using the animate package of Grahn(2009), a set of dynamic movies can be created to visualize the changes in singular rows and singular columns. 
+Using the animate package of Grahn(2011), a set of dynamic movies can be created to visualize the changes in singular rows and singular columns. 
 }
 \seealso{
 \code{\link[rainbow]{fboxplot}}, \code{\link[base]{svd}}
 }
 \examples{
-SVDplot(ElNino)
-SVDplot(ElNino, plot.type = "image")
+SVDplot(ElNinosmooth)
+SVDplot(ElNinosmooth, plot.type = "image")
 }
 \keyword{multivariate}
