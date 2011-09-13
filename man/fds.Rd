@@ -12,7 +12,8 @@ also a time variable.
 \usage{
 fds(x, y, xname, yname)
 fts(x, y, start = 1, frequency = 1, xname, yname)
-sfts(data, period = frequency(data), start = tsp(data)[1], frequency = 1, xname, yname)
+sfts(data, period = frequency(data), start = tsp(data)[1], 
+     frequency = 1, xname, yname)
 }
 \arguments{
 \item{x}{Numeric vector of length \eqn{p}{p}.}

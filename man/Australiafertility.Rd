@@ -6,7 +6,7 @@
 Australian fertility data
 }
 \description{
-Age-specific fertility rates in Australia from 1921 to 2006.
+Age-specific fertility rates between ages 15 and 49 in Australia from 1921 to 2006. 
 
 The age-specific fertility rates can be smoothed using a weighted median smoothing B-splines, constrained to be concave. 
 }
