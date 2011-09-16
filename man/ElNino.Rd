@@ -4,10 +4,10 @@
 \docType{data}
 \title{Sea surface temperature data set}
 \description{
-Original monthly sea surface temperatures have been updated from January 1950 to December 2006. 
+Original monthly sea surface temperatures have been restricted from January 1950 to December 2006. 
 
 The monthly sea surface tmeperatures can be smoothed using smoothing spline with the smoothing parametric 
-determined by generalized cross validation. As an example, the smoothed monthly sea surface temperature is from January 1950 to December 2006.
+determined by generalized cross validation. 
 }
 \usage{
 data(ElNino)

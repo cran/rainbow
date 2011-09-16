@@ -1,5 +1,5 @@
-cf65efc5f9b0e82fbae148969a0cb7eb *CHANGELOG
-1dc13c826c6a5dda86e71bddf26411f7 *DESCRIPTION
+c2b3803e78a766204a7b04610efe5aa0 *CHANGELOG
+ae981ac5b25bdbaf293fae3de00b6355 *DESCRIPTION
 10cca512e06b5cb19e78803ce23b7244 *NAMESPACE
 5d72ca9861d678d39735af39b5ccdfa9 *R/L1median2.r
 636ff7773d43ef10df4ec913c074737d *R/Qn.r
@@ -61,10 +61,10 @@ d2d61eb531a1d10251d819f33f9d3f51 *R/skernel.norm.R
 3acc2b1f472a769f0f770ff2ad393ccf *data/Australiafertility.rda
 5818460f06dd9b609759f911cf5f0fb9 *data/Australiasmoothfertility.rda
 7a19c0213fb151575cf943c767ec8c1b *data/ElNino.rda
-bb6da9b45f8f07a88f6014968b4f8fc9 *data/ElNinosmooth.rda
+9fed20d0a8d1bf3a4da13293484fe032 *data/ElNinosmooth.rda
 59ea5b9cedf6ec78ef23acf750fcc8a8 *data/Simulationdata.rda
 9a7b7b7ea4df9e78db5cf0cb9bc0a35d *man/Australiafertility.Rd
-98906492595413e825f58e5cac3cd5ee *man/ElNino.Rd
+78130dfc8fd36057fb0a23ffca77f727 *man/ElNino.Rd
 44c3f81c8b06b9cec3cd55fd7fb4e480 *man/SVDplot.Rd
 ba9241f0a2974eba4aaa977ac5fa05d8 *man/Simulationdata.Rd
 2f228ace7a838f6ee902895fe147fcb1 *man/fboxplot.Rd
