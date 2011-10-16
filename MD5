@@ -1,6 +1,6 @@
-c2b3803e78a766204a7b04610efe5aa0 *CHANGELOG
-ae981ac5b25bdbaf293fae3de00b6355 *DESCRIPTION
-10cca512e06b5cb19e78803ce23b7244 *NAMESPACE
+093137521c96b68ec2f1d1406ff81e6f *CHANGELOG
+0917d4f5cbddc1809c9d28cd7967d8fc *DESCRIPTION
+c718d8d92538c0bad959c965fb024c50 *NAMESPACE
 5d72ca9861d678d39735af39b5ccdfa9 *R/L1median2.r
 636ff7773d43ef10df4ec913c074737d *R/Qn.r
 c5e190b0c5e22d2fc5aae3fd12215d1b *R/SVDplot.R
@@ -58,6 +58,7 @@ c3a9275ee63b9896c378ccf6c55a87a9 *R/rapca.R
 43fec81d20ce613c86f9868a2a1449a7 *R/rstep.r
 2559b644bc7601630f4a0a552b481b29 *R/sfts.R
 d2d61eb531a1d10251d819f33f9d3f51 *R/skernel.norm.R
+411c56ef3417584b4da6ce20364eb23c *R/summaryfunction.R
 3acc2b1f472a769f0f770ff2ad393ccf *data/Australiafertility.rda
 5818460f06dd9b609759f911cf5f0fb9 *data/Australiasmoothfertility.rda
 7a19c0213fb151575cf943c767ec8c1b *data/ElNino.rda
@@ -74,3 +75,4 @@ a12471895beb799543509dcbe419ca80 *man/foutliers.Rd
 8a58ec5562b21f6a67e068c9d4440571 *man/plot.fdepth.Rd
 14844ba80193aa45ef3fad190e8fb64f *man/plot.fds.Rd
 be041b1f1ca865b289addbd0b9936ee0 *man/rainbow-package.Rd
+3d0120c9c8e81ab02c76b92020b3d257 *man/summaryfunction.Rd
