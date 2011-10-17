@@ -9,7 +9,8 @@ plot.fds,
 lines.fds,
 points.fds,
 plot.fdepth,
-SVDplot
+SVDplot,
+summaryfunction
 )
 
 
