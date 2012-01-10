@@ -1,26 +1,28 @@
-\name{ElNino}
-\alias{ElNino}
-\alias{ElNinosmooth}
+\name{ElNino2011}
+\alias{ElNino2011}
+\alias{ElNino2011smooth}
 \docType{data}
-\title{Sea surface temperature data set from January 1950 to December 2006}
+\title{Sea surface temperature data set from January 1950 to December 2011}
 \description{
-Original monthly sea surface temperatures have been restricted from January 1950 to December 2006. 
+Original monthly sea surface temperatures have been restricted from January 1950 to December 2011. 
 
-The monthly sea surface temperatures can be smoothed using smoothing spline with the smoothing parametric 
+The monthly sea surface tmeperatures can be smoothed using smoothing spline with the smoothing parametric 
 determined by generalized cross validation. 
 }
 \usage{
-data(ElNino)
-data(ElNinosmooth)
+data(ElNino2011)
+data(ElNino2011smooth)
 }
 \format{
 An object of class \code{sfts}.
 }
 \details{
-These averaged monthly sea surface temperatures are measured by the different moored buoys in the "Nino region" defined by the coordinates 0-10 degree South and 90-80 degree West.
+These averaged monthly sea surface temperatures are measured by the different moored buoys in the "Nino region" 
+defined by the coordinates 0-10 degree South and 90-80 degree West.
 }
 \source{
-National Weather Service Climate Prediction Center website at \url{http://www.cpc.ncep.noaa.gov/data/indices/sstoi.indices}. The data is the third column with the title NINO1+2.
+National Weather Service Climate Prediction Center website at \url{http://www.cpc.ncep.noaa.gov/data/indices/sstoi.indices}. 
+The data is the third column with the title NINO1+2.
 
 This data set can also be found at the NonParametric Functional Data Analysis website (\url{http://www.lsp.ups-tlse.fr/staph/npfda/}). 
 }
@@ -40,7 +42,7 @@ E. Moran, R. Adams, B. Bakoyema, S. Fiorini and B. Boucek (2006) "Human strategi
 A. Timmermann, J. Oberhuber, A. Bacher, M. Esch, M. Latif and E. Roeckner (1999) "Increased El Nino frequency in a climate model forced by future greenhouse warming", \emph{Nature}, \bold{398}(6729), 694-697.   
 }
 \examples{
-plot(ElNino)
-plot(ElNinosmooth)
+plot(ElNino2011)
+plot(ElNino2011smooth)
 }
 \keyword{datasets}
