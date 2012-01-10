@@ -1,6 +1,10 @@
+v 2.8
+
+1) Update the latest monthly sea surface temperature data set, now is from Januaray 1950 to December 2011.
+
 v 2.7
 
-1) add summaryfunction to show quantiles of functional data and summary statistics
+1) Add summaryfunction to show quantiles of functional data and summary statistics
 
 v 2.6
 
@@ -28,39 +32,39 @@ v 2.3.5
 
 v 2.3.4
 
-1) update SVDplot function
-2) update plot.fds function
+1) Update the SVDplot function
+2) Update the plot.fds function
 
 v 2.3.3
 
-1) update ElNinosmooth data
+1) Update the ElNinosmooth data
 
 v 2.3.2
 
-1) update ElNino data
+1) Update the ElNino data
 
 v 2.3 
 
-1) delete col = "black" argument in lines.fds and points.fds
-2) update col argument in plot.fds
+1) Delete col = "black" argument in lines.fds and points.fds
+2) Update col argument in plot.fds
 
 v 2.2
 
-1) change palatte() in plot.fds
-2) update lines.fds and points.fds
+1) Change the palatte() in plot.fds
+2) Update the lines.fds and points.fds
 
 v 2.1
 
-1) update lines.fds and points.fds
-2) update SVDplot
+1) Update the lines.fds and points.fds
+2) Update the SVDplot
 
 v 2.0
 
-1) Update plot.fds, when plot.type = "time"
+1) Update the plot.fds, when plot.type = "time"
 
 v 1.10
 
-1) Update fboxplot 
+1) Update the fboxplot 
 
 v 1.9
 
