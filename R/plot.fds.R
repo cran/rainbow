@@ -111,7 +111,7 @@ plot.fds = function (x, plot.type = c("functions", "time", "depth", "density"),
                 yymax <- yy[, 1]
             }
             if (nrow(yy) == 1) 
-                plot(ts(c(yy), s = start(x$time), f = frequency(x$time)), 
+                plot(ts(c(yy), start = start(x$time), frequency = frequency(x$time)), 
                   ylab = ylab, ...)
             if (plot.type == "functions") {
                 if (add == FALSE) {

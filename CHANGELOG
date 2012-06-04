@@ -1,3 +1,8 @@
+v 2.9
+
+1) add vignette in the directory of inst/doc
+2) add demo folder
+
 v 2.8
 
 1) Update the latest monthly sea surface temperature data set, now is from Januaray 1950 to December 2011.

@@ -1,8 +1,8 @@
 Package: rainbow
 Type: Package
 Title: Rainbow plots, bagplots and boxplots for functional data
-Version: 2.8
-Date: 2012-01-10
+Version: 2.9
+Date: 2012-06-04
 Depends: R (>= 2.10.0), hdrcde, MASS, pcaPP, cluster, colorspace
 Author: Han Lin Shang and Rob J Hyndman
 Maintainer: Han Lin Shang <HanLin.Shang@monash.edu.au>
@@ -13,6 +13,6 @@ LazyData: yes
 LazyLoad: yes
 LazyDataCompression: xz
 URL: http://monashforecasting.com/index.php?title=R_packages
-Packaged: 2012-01-10 01:18:47 UTC; hanshang
+Packaged: 2012-06-04 03:13:08 UTC; hanshang
 Repository: CRAN
-Date/Publication: 2012-01-10 08:30:48
+Date/Publication: 2012-06-04 05:33:41
