@@ -1,8 +1,17 @@
 bhdr = function (data, alpha = c(0.01, 0.5), label = TRUE, shadecols, 
-    pointcol, ...) 
+    pointcol, projmethod, ...) 
 {
     y = t(data$y)
-    sco = PCAproj(y, k = 2, center = median)$scores
+	x = data$x
+	if(projmethod == "PCAproj")
+	{
+		sco = PCAproj(y, k = 2, center = median)$scores
+	}
+	if(projmethod == "rapca")
+	{
+		sco = fdpca(x, data$y)$coeff[,2:3]
+		rownames(sco) = 1:ncol(data$y)
+	}
     band = Hscv.diag(sco, binned = TRUE)
     if (any(diag(band) < 10^(-30))) {
         stop("Computationally singular due to at least one of the diagonal elements of bandwidth matrix is very close to 0.")
