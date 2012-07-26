@@ -22,7 +22,7 @@
 
 \newenvironment{smallexample}{\begin{alltt}\small}{\end{alltt}}
 \newenvironment{smallverbatim}{\small\verbatim}{\endverbatim}
-\graphicspath{{plots/}}
+%\graphicspath{{plots/}}
 
 %% need no \usepackage{Sweave.sty}
 
@@ -176,7 +176,8 @@ Figures~\ref{fig:4} and~\ref{fig:5} display the bivariate and functional bagplot
 <<fig=TRUE,echo=FALSE,keep.source=TRUE,include=FALSE>>=
 # plot.type = "bivariate", the bivariate principal component scores are displayed
 # type = "bag" requests the bagplot
-fboxplot(ElNinosmooth, plot.type = "bivariate", type = "bag", ylim = c(-10, 20), xlim = c(-10, 20))
+fboxplot(ElNinosmooth, plot.type = "bivariate", type = "bag", projmethod = "PCAproj", 
+         ylim = c(-10, 20), xlim = c(-10, 20))
 @
 \includegraphics[width=0.4\textwidth]{rainbow-006}\label{fig:4}
 }
@@ -185,7 +186,7 @@ fboxplot(ElNinosmooth, plot.type = "bivariate", type = "bag", ylim = c(-10, 20),
 {
 <<fig=TRUE,echo=FALSE,keep.source=TRUE,include=FALSE>>=
 # plot.type = "functional", the bivariate pc scores are matched to corresponding curves
-fboxplot(ElNinosmooth, plot.type = "functional", type = "bag")
+fboxplot(ElNinosmooth, plot.type = "functional", type = "bag", projmethod = "PCAproj")
 @
 \includegraphics[width=0.4\textwidth]{rainbow-007}\label{fig:5}
 }
@@ -201,9 +202,10 @@ In Figure~\ref{fig:4}, the dark gray region shows the 50\% bag, and the light gr
 \begin{smallverbatim}
 # plot.type = "bivariate", the bivariate principal component scores are displayed
 # type = "bag" requests the bagplot
-fboxplot(ElNinosmooth, plot.type="bivariate", type="bag", ylim=c(-10,20), xlim=c(-10,20))
+fboxplot(ElNinosmooth, plot.type="bivariate", type="bag", projmethod = "PCAproj", 
+         ylim=c(-10,20), xlim=c(-10,20))
 # plot.type = "functional", the bivariate pc scores are matched to corresponding curves
-fboxplot(ElNinosmooth, plot.type = "functional", type = "bag")
+fboxplot(ElNinosmooth, plot.type = "functional", type = "bag", projmethod = "PCAproj")
 \end{smallverbatim}
 \end{smallexample}
 
@@ -221,7 +223,7 @@ The functional HDR boxplot is a mapping of the bivariate HDR boxplot \citep{Hynd
 # plot.type = "bivariate", the bivariate principal component scores are displayed
 # type = "hdr" requests the highest density region boxplot
 fboxplot(ElNinosmooth, plot.type="bivariate", type="hdr", alpha=c(0.07,0.5), 
-         ylim=c(-10,20), xlim=c(-10,20))
+         projmethod = "PCAproj", ylim=c(-10,20), xlim=c(-10,20))
 @
 \includegraphics[width=0.4\textwidth]{rainbow-006}\label{fig:7}
 }
@@ -230,7 +232,7 @@ fboxplot(ElNinosmooth, plot.type="bivariate", type="hdr", alpha=c(0.07,0.5),
 {
 <<fig=TRUE,echo=FALSE,keep.source=TRUE,include=FALSE>>=
 # plot.type = "functional", the bivariate pc scores are matched to corresponding curves
-fboxplot(ElNinosmooth, plot.type = "functional", type = "hdr", alpha = c(0.07,0.5))
+fboxplot(ElNinosmooth, plot.type = "functional", type = "hdr", alpha = c(0.07,0.5), projmethod="PCAproj")
 @
 \includegraphics[width=0.4\textwidth]{rainbow-007}\label{fig:8}
 }
@@ -251,8 +253,9 @@ These HDR boxplots were produced using the following code.
 # alpha requests the coverage probability of inner
 # and outer HDR regions, customarily c(0.05,0.5)
 fboxplot(ElNinosmooth, plot.type="bivariate", type="hdr", alpha=c(0.07,0.5), 
-         ylim=c(-10,20), xlim=c(-10,20))
-fboxplot(ElNinosmooth, plot.type = "functional", type = "hdr", alpha = c(0.07,0.5))
+         projmethod="PCAproj", ylim=c(-10,20), xlim=c(-10,20))
+fboxplot(ElNinosmooth, plot.type = "functional", type = "hdr", alpha = c(0.07,0.5), 
+         projmethod="PCAproj")
 \end{smallverbatim}
 \end{smallexample}
 
@@ -268,33 +271,17 @@ where the singular columns $\bm{u}_1,\cdots,\bm{u}_K$ form $K$ orthonormal basis
 
 The interactive plot of \citet{ZMS+07} captures the changes in the singular columns, as the number of curves gradually increases. Similarly, it also captures the changes in the singular rows, as the number of covariates gradually increases. The interactive plot simultaneously presents the column and row information of a two-way matrix, to relate the matrix to the corresponding curves, to show local variation, and to highlight interactions between columns and rows of a two-way matrix.
 
-By using the \pkg{animate} package \citep{Grahn09}, a set of dynamic movies can be created (see Figure~\ref{fig:9} for an example). The advantage of creating these movies is the ability to demonstrate the time-varying features of the singular components, and to highlight outliers if present in the data. The animation is started by clicking on any graph using Adobe$^{\copyright}$ software.
-\begin{figure*}[!ht]
+\begin{figure}[!ht]
 \centering
-\scalebox{.523}{\animategraphics{5}{frame_}{286}{342}}\quad
-\scalebox{.523}{\animategraphics{5}{frame_}{1}{57}}\quad
-\scalebox{.523}{\animategraphics{5}{frame_}{58}{114}}
-\\
-\scalebox{.523}{\animategraphics{5}{frame_}{115}{171}}\quad
-\scalebox{.523}{\animategraphics{5}{frame_}{172}{228}}\quad
-\scalebox{.523}{\animategraphics{5}{frame_}{229}{285}}
-  \caption{The animation of SVD plot is started by clicking on any graph using Adobe$^{\copyright}$ software.}\label{fig:9}
-\end{figure*}
+<<fig=TRUE,echo=FALSE,keep.source=TRUE,include=FALSE>>=
+SVDplot(ElNinosmooth, order = 3, plot = TRUE)
+@
+\includegraphics[width=0.8\textwidth]{rainbow-010}
+\caption{Singular value decomposition for the smoothed monthly sea surface temperatures (in $^{\circ}$C) from January 1950 to December 2006.}\label{fig:9}
+\end{figure}
 
 Figure~\ref{fig:9} shows the SVD plot of the sea surface temperature data set. The first SVD component captures the seasonal pattern, while the second and third SVD components show the contrasts of sea surface temperatures among different months. Note that the SVD2 and SVD3 are on a much smaller scale in comparison to the SVD1, because the SVD1 accounts for the most of curves' variation. The functional time series can be approximated by the summation of the first three SVD components. From the residual plot, outliers can be identified if they differ significantly from zero.
 
-The animated SVD plot was produced in a latex editor, such as WinEdt$^{\copyright}$. For creating one animation in Figure~\ref{fig:9}, a series of 57 figures (as there are 57 years in the sea surface temperature data set) are linked together as follows
-
-\begin{smallexample}
-  \begin{smallverbatim}
-    \% load a package in WinEdt
-    \usepackage{animate}
-    \% link a series of 57 figures for producing one animation
-    \begin{figure}
-      \animategraphics{figure_}{1}{57}
-    \end{figure}
-  \end{smallverbatim}
-\end{smallexample}
 In R, the non-animated SVD plot can be produced using the following code.
 \begin{smallexample}
 \begin{smallverbatim}

@@ -1,9 +1,18 @@
-fbag = function (data, factor = 2.57, xlim = NULL, ylim = range(data$y, 
-    na.rm = TRUE), xlab, ylab, plotlegend, legendpos, ncol, ...) 
+fbag = function (data, factor, xlim = NULL, ylim = range(data$y, 
+    na.rm = TRUE), xlab, ylab, plotlegend, legendpos, ncol, projmethod, ...) 
 {
     y <- t(data$y)
     x <- data$x
-    rob <- PCAproj(y, k = 2, center = median)$score
+	if(projmethod == "PCAproj")
+	{
+		rob <- PCAproj(y, k = 2, center = median)$score
+	}
+	if(projmethod == "rapca")
+	{
+		rob <- fdpca(x, data$y)$coeff[,2:3]
+		rownames(rob) = 1:(dim(data$y)[2])
+		colnames(rob) = c("Comp.1","Comp.2")
+	}
     pcbag <- compute.bagplot(rob[, 1], rob[, 2], factor = factor)
     if (pcbag$is.one.dim == TRUE) {
         stop("Bivariate principal component scores lie in one direction.")
@@ -12,12 +21,12 @@ fbag = function (data, factor = 2.57, xlim = NULL, ylim = range(data$y,
         outlier <- as.numeric(rownames(pcbag$pxy.outlier))
         inside <- as.numeric(rownames(pcbag$pxy.bag))
         insidecurve <- y[inside, ]
-        maximum1 <- apply(insidecurve, 2, max)
-        minimum1 <- apply(insidecurve, 2, min)
+        maximum1 <- apply(insidecurve, 2, max, na.rm=TRUE)
+        minimum1 <- apply(insidecurve, 2, min, na.rm=TRUE)
         out <- as.numeric(rownames(pcbag$pxy.outer))
         outcurve <- y[out, ]
-        maximum2 <- apply(outcurve, 2, max)
-        minimum2 <- apply(outcurve, 2, min)
+        maximum2 <- apply(outcurve, 2, max, na.rm=TRUE)
+        minimum2 <- apply(outcurve, 2, min, na.rm=TRUE)
         p = dim(y)[2]
         low = up = matrix(, p, 1)
         for (i in 1:p) {
@@ -39,18 +48,18 @@ fbag = function (data, factor = 2.57, xlim = NULL, ylim = range(data$y,
             col = "light gray", ylim = ylim, ...)
         polygon(c(x, rev(x)), c(maximum1, rev(minimum1)), border = FALSE, 
             col = "dark gray", ...)
-	lines(fts(x, notchlow), col = "blue", lty = 2, ...)
-        lines(fts(x, notchupper), col = "blue", lty = 2, ...)      
+        lines(fts(x, notchlow), col = "blue", lty = 2, ...)
+        lines(fts(x, notchupper), col = "blue", lty = 2, ...)
         lines(fts(x, centercurve), col = "black", ...)
         if (n > 0) {
             outliercurve <- y[outlier, ]
-            lines(fts(x, t(outliercurve)), col = rainbow(n), ...)
-			if(plotlegend == TRUE)
-			{
-				legend(legendpos, c(colnames(data$y)[outlier]), col = rainbow(n), lty=1, ncol = ncol, ...)
+            lines(fts(x, t(outliercurve)), col = rainbow(n), 
+                ...)
+            if (plotlegend == TRUE) {
+                legend(legendpos, c(colnames(data$y)[outlier]), 
+                  col = rainbow(n), lty = 1, ncol = ncol, ...)
             }
-			return(outlier)
+            return(outlier)
         }
     }
 }
-

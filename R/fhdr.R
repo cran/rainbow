@@ -1,8 +1,16 @@
-fhdr = function (data, alpha = c(0.01, 0.5), label = TRUE, xlab, ylab, plotlegend, legendpos, ncol, 
-    ...) 
+fhdr = function (data, alpha = c(0.01, 0.5), label = TRUE, xlab, ylab, 
+    plotlegend, legendpos, ncol, projmethod, ...) 
 {
     y = t(data$y)
-    sco = PCAproj(y, k = 2, center = median)$scores
+	if(projmethod == "PCAproj")
+	{
+		sco = PCAproj(y, k = 2, center = median)$scores
+	}
+	if(projmethod == "rapca")
+	{
+		sco = fdpca(x, data$y)$coeff[,2:3]
+		rownames(sco) = 1:ncol(data$y)
+	}
     ylim = range(y, na.rm = TRUE)
     band = Hscv.diag(sco, binned = TRUE)
     if (any(diag(band) < 10^(-30))) {
@@ -47,16 +55,19 @@ fhdr = function (data, alpha = c(0.01, 0.5), label = TRUE, xlab, ylab, plotlegen
         if (n > 0) {
             outliercurve <- y[outlier, ]
             if (n == 1) {
-                lines(fts(x, as.matrix(outliercurve)), col = rainbow(n), ...)
+                lines(fts(x, as.matrix(outliercurve)), col = rainbow(n), 
+                  ...)
             }
             if (n > 1) {
-                lines(fts(x, t(outliercurve)), col = rainbow(n), ...)
+                lines(fts(x, t(outliercurve)), col = rainbow(n), 
+                  ...)
             }
-			if(plotlegend == TRUE)
-			{
-				legend(legendpos, c(colnames(data$y)[outlier]), col = rainbow(n), lty=1, ncol = ncol, ...)
-			}
+            if (plotlegend == TRUE) {
+                legend(legendpos, c(colnames(data$y)[outlier]), 
+                  col = rainbow(n), lty = 1, ncol = ncol, ...)
+            }
         }
         return(outlier)
     }
 }
+
