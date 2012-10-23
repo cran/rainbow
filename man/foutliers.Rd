@@ -55,11 +55,7 @@ R. J. Hyndman and H. L. Shang. (2010) "Rainbow plots, bagplots, and boxplots for
 }
 \author{Han Lin Shang}
 \examples{
-foutliers(data = ElNino, method = "lrt")
 foutliers(data = ElNino, method = "depth.trim")
-foutliers(data = ElNino, method = "depth.pond")
-foutliers(data = ElNino, method = "HUoutliers")
-foutliers(data = ElNino, method = "robMah")
 }
 \keyword{multivariate}
 

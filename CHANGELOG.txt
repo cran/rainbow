@@ -1,3 +1,8 @@
+v 3.1
+
+1) Add depth.radius: a new functional depth measure proposed by Gervini (2012, Statistica Sinica).
+2) Update the fhdr function by adding x = data$x in the second line.
+
 v 3.0
 
 1) Add projmethod option in the fboxplot
