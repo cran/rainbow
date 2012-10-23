@@ -2,6 +2,7 @@ fhdr = function (data, alpha = c(0.01, 0.5), label = TRUE, xlab, ylab,
     plotlegend, legendpos, ncol, projmethod, ...) 
 {
     y = t(data$y)
+    x = data$x
 	if(projmethod == "PCAproj")
 	{
 		sco = PCAproj(y, k = 2, center = median)$scores
