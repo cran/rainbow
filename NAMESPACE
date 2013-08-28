@@ -24,8 +24,17 @@ S3method(print,sfts)
 
 
 import(grDevices)
+import(ks)
+import(stats)
+import(hdrcde)
+import(MASS)
+import(pcaPP)
+import(cluster)
+import(colorspace)
 
-importFrom(stats)
+
+
+
 
 
 

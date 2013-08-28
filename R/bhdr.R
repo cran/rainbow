@@ -20,9 +20,8 @@ bhdr = function (data, alpha = c(0.01, 0.5), label = TRUE, shadecols,
         den <- kde(x = sco, H = 0.8 * band)
         den <- list(x = den$eval.points[[1]], y = den$eval.points[[2]], 
             z = den$estimate)
-        hdr1 <- hdrcde:::hdr.info.2d(sco[, 1], sco[, 2], den, 
-            alpha = alpha)
-        hdrcde:::plothdr2d(sco[, 1], sco[, 2], den, alpha = alpha, 
+        hdr1 <- hdrcde::hdr.2d(sco[, 1], sco[, 2], prob = alpha, den)
+        plot.hdr2d(hdrcde::hdr.2d(sco[, 1], sco[, 2], prob = alpha, den),
             shadecols = shadecols, pointcol = pointcol, xlab = "PC score 1", 
             ylab = "PC score 2", show.points = FALSE, , xaxs = "i", 
             yaxs = "i", ...)
