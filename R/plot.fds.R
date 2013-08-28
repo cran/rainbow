@@ -104,8 +104,7 @@ plot.fds = function (x, plot.type = c("functions", "time", "depth", "density"),
                 den = kde(x = X, H = h)
                 den = list(x = den$eval.points[[1]], y = den$eval.points[[2]], 
                   z = den$estimate)
-                den2 <- hdrcde:::hdr.info.2d(sco[, 1], sco[, 
-                  2], den, alpha = c(0.01, 0.5))
+                den2 <- hdrcde::hdr.2d(sco[, 1], sco[, 2], prob = c(0.01, 0.5), den)
                 lineindex <- order(den2$fxy, decreasing = TRUE)
                 yy <- yy[, lineindex]
                 yymax <- yy[, 1]

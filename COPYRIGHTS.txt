@@ -1,1 +1,0 @@
-COPYRIGHTS: The R port copyright Han Lin Shang and Rob Hyndman.

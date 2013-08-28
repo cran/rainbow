@@ -1,7 +1,12 @@
+v 3.2
+
+1) Change my email address
+2) update hdr.info.2d and plothdr2d functions from the hdrcde package
+
 v 3.1
 
-1) Add depth.radius: a new functional depth measure proposed by Gervini (2012, Statistica Sinica).
-2) Update the fhdr function by adding x = data$x in the second line.
+1) Add depth.radius: a new functional depth measure proposed by Gervini (2012, Statistica Sinica)
+2) Update the fhdr function by adding x = data$x in the second line
 
 v 3.0
 
@@ -15,7 +20,7 @@ v 2.9
 
 v 2.8
 
-1) Update the latest monthly sea surface temperature data set, now is from Januaray 1950 to December 2011.
+1) Update the latest monthly sea surface temperature data set, now is from Januaray 1950 to December 2011
 
 v 2.7
 
@@ -33,13 +38,13 @@ v 2.5
 
 v 2.4
 
-1) Update the SVD function. The argument plot = FALSE would return a series of SVDs, reconstruction plot, and residual plot.
+1) Update the SVD function. The argument plot = FALSE would return a series of SVDs, reconstruction plot, and residual plot
 2) Update the plot.fds function. The argument plotlegend = TRUE would add a legend to the figure. When 
    plot.type = "function", the legend displays the first curve, middle curve, last curve ordered by time.
    When plot.type = "depth", the legend displays the least depth curve, middle depth curve and median curve.
-   When plot.type = "density", the legend displays the least populated curve, middle populated curve and mode curve.
-3) Update the fboxplot function. The argument plotlegend = TRUE would add a legend to the figure. 
-4) Update rainbow:::bbag function to display principal component scores in eqscplot.
+   When plot.type = "density", the legend displays the least populated curve, middle populated curve and mode curve
+3) Update the fboxplot function. The argument plotlegend = TRUE would add a legend to the figure
+4) Update rainbow:::bbag function to display principal component scores in eqscplot
 
 v 2.3.5
 

@@ -19,8 +19,9 @@ fhdr = function (data, alpha = c(0.01, 0.5), label = TRUE, xlab, ylab,
     }
     else {
         den <- kde(x = sco, H = 0.8 * band)
-        hdr1 <- hdrcde:::hdr.info.2d(sco[, 1], sco[, 2], list(x = den$eval.points[[1]], 
-            y = den$eval.points[[2]], z = den$estimate), alpha = alpha)
+        hdr1 <- hdrcde::hdr.2d(sco[, 1], sco[, 2], prob = alpha,
+            list(x = den$eval.points[[1]], y = den$eval.points[[2]],
+                z = den$estimate))
         index <- (hdr1$fxy < min(hdr1$falpha))
         outlier <- which(as.vector(index))
         index <- (hdr1$fxy > hdr1$falpha[1])
