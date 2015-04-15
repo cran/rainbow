@@ -49,16 +49,12 @@ If \code{plot.type="density"}, then functions are first ordered by density and t
 \references{
 R. J. Hyndman and H. L. Shang. (2010) "Rainbow plots, bagplots, and boxplots for functional data", \emph{Journal of Computational and Graphical Statistics}, \bold{19}(1), 29-45.
 }
-\author{Rob J Hyndman, Han Lin Shang}
+\author{Rob J Hyndman, Han Lin Shang. Please, report bugs and suggestions to hanlin.shang@anu.edu.au}
 \seealso{\code{\link[rainbow]{fds}}, \code{\link[rainbow]{lines.fds}}, \code{\link[rainbow]{points.fds}}}
 \examples{
-plot(x = ElNinosmooth, plot.type = "time")
-plot(x = ElNinosmooth, plot.type = "depth", legend = TRUE)
-plot(x = ElNinosmooth, plot.type = "density", legend = TRUE)
 plot(x = ElNinosmooth, plot.type = "functions", legend = TRUE)
 lines(x = ElNinosmooth, plot.type = "functions", index = 3)
 points(x = ElNinosmooth, plot.type = "functions", index = 3)
-
 }
 \keyword{hplot}
 

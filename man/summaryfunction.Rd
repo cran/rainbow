@@ -29,7 +29,7 @@ A function for displaying summary statistics or quantiles of functional data.
 Return a plot of summary statistics of functional data or a plot of quantiles of functional data.
 }
 \author{
-Han Lin Shang
+Han Lin Shang.  Please, report bugs and suggestions to hanlin.shang@anu.edu.au
 }
 \seealso{
 \code{\link{fds}}

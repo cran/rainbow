@@ -3,15 +3,15 @@
 \alias{rainbow}
 \docType{package}
 \title{
-Rainbow plots, bagplots and boxplots for functional data
+Rainbow Plots, Bagplots and Boxplots for Functional Data
 }
 \description{
-This package computes the rainbow plots, bagplots and boxplots for functional data. The latter two can also be used to identify outliers, which have either the lowest depth or the lowest density.
+This package presents the rainbow plots, bagplots and boxplots for functional data. The latter two can also be used to identify outliers, which have either the lowest depth or the lowest density.
 }
 \author{
 Han Lin Shang and Rob J Hyndman
 
-Maintainer: Han Lin Shang <H.Shang@soton.ac.uk>
+Maintainer: Han Lin Shang <hanlin.shang@anu.edu.au>
 }
 \references{
 R. J. Hyndman and H. L. Shang. (2008) "Bagplots, boxplots and outlier detection for functional data", in S. Dabo-Niang and F. Ferraty, eds, `Functional and Operatorial Statistics', Springer, Heidelberg, pp. 201-207.

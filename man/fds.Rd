@@ -29,7 +29,7 @@ sfts(data, period = frequency(data), start = tsp(data)[1],
 \item{yname}{Character string giving name of \code{y} vector. (optional)}
 }
 \value{An object of class \code{fds} or \code{fts} or \code{sfts}.}
-\author{Rob J Hyndman}
+\author{Rob J Hyndman and Han Lin Shang.  Please, report bugs and suggestions to hanlin.shang@anu.edu.au}
 \examples{
 fds(x = 1:20, y = Simulationdata$y, xname = "x", yname = "Simulated value")
 fts(x = 15:49, y = Australiasmoothfertility$y, xname = "Age", 

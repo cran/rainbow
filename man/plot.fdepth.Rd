@@ -17,7 +17,7 @@ Plot functional depth.
 \references{
 R. J. Hyndman and H. L. Shang. (2010) "Rainbow plots, bagplots, and boxplots for functional data", \emph{Journal of Computational and Graphical Statistics}, \bold{19}(1), 29-45.
 }
-\author{Rob J Hyndman, Han Lin Shang}
+\author{Rob J Hyndman, Han Lin Shang.  Please, report bugs and suggestions to hanlin.shang@anu.edu.au}
 \seealso{\code{\link[rainbow]{fdepth}}}
 \examples{
 plot(fdepth(ElNino))

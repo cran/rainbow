@@ -46,17 +46,13 @@ R. J. Hyndman (1996) "Computing and graphing highest density regions", \emph{The
 
 R. J. Hyndman and H. L. Shang. (2010) "Rainbow plots, bagplots, and boxplots for functional data", \emph{Journal of Computational and Graphical Statistics}, \bold{19}(1), 29-45.
 }
-\author{Rob J Hyndman, Han Lin Shang}
+\author{Rob J Hyndman, Han Lin Shang. Please, report bugs and suggestions to hanlin.shang@anu.edu.au}
 \seealso{
 \code{\link[rainbow]{SVDplot}}
 }
 \examples{
 fboxplot(data = ElNino, plot.type = "functional", type = "bag", projmethod="PCAproj")
 fboxplot(data = ElNino, plot.type = "bivariate", type = "bag", projmethod="PCAproj")
-fboxplot(data = ElNino, plot.type = "functional", type = "hdr", alpha = c(0.07,0.5), 
-		projmethod="PCAproj")
-fboxplot(data = ElNino, plot.type = "bivariate", type = "hdr", alpha = c(0.07,0.5), 
-		projmethod="PCAproj")
 }
 \keyword{multivariate}
 

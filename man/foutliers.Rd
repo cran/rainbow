@@ -53,7 +53,7 @@ M. Febrero and P. Galeano and W. Gonzalez-Manteiga (2008) "Outlier detection in 
 
 R. J. Hyndman and H. L. Shang. (2010) "Rainbow plots, bagplots, and boxplots for functional data", \emph{Journal of Computational and Graphical Statistics}, \bold{19}(1), 29-45.
 }
-\author{Han Lin Shang}
+\author{Han Lin Shang.  Please, report bugs and suggestions to hanlin.shang@anu.edu.au}
 \examples{
 foutliers(data = ElNino, method = "depth.trim")
 }

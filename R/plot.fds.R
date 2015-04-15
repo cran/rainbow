@@ -19,7 +19,14 @@ plot.fds = function (x, plot.type = c("functions", "time", "depth", "density"),
                 if (xlab == x$xname) {
                   xlab <- "Time"
                 }
-                year = as.numeric(colnames(x$y))
+                if(is.null(colnames(x$y)))
+                {
+                    year = 1:ncol(x$y)
+                }
+                else
+                {
+                    year = as.numeric(colnames(x$y))
+                }
                 if (add == FALSE) {
                   matplot(year, t(x$y), type = type, ylab = ylab, 
                     xlab = xlab, col = col, lty = lty, pch = pch, 
@@ -66,7 +73,7 @@ plot.fds = function (x, plot.type = c("functions", "time", "depth", "density"),
 					}
 					if(colorchoice == "gray")
 					{
-						col <- gray(1:(ny)/ny)
+                        col <- gray(ny:1/ny)
 					}
 					if(colorchoice == "sequential_hcl")
 					{
@@ -90,6 +97,13 @@ plot.fds = function (x, plot.type = c("functions", "time", "depth", "density"),
                 }
             }
             yy <- as.matrix(x$y)
+            if(any(is.na(yy)))
+            {
+                if(requireNamespace("forecast", quietly = TRUE))
+                {
+                    yy = matrix(forecast::na.interp(as.numeric(yy)), nrow = nrow(yy), ncol = ncol(yy))
+                }
+            }
             if (plot.type == "depth") {
                 sco <- PCAproj(t(yy), k = 2, center = median)$score
                 center <- compute.bagplot(sco)$center

@@ -56,7 +56,7 @@ J. A. Cuesta-Albertos and A. Nieto-Reyes (2010) "Functional classification and t
 
 D. Gervini (2012) "Outlier detection and trimmed estimation in general functional spaces", \emph{Statistica Sinica}, \bold{22}(4), 1639-1660.
 }
-\author{Han Lin Shang}
+\author{Han Lin Shang.  Please, report bugs and suggestions to hanlin.shang@anu.edu.au}
 \examples{
 fdepth(data = ElNino, type = "FM")
 fdepth(data = ElNino, type = "mode")

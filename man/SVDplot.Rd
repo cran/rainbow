@@ -42,7 +42,7 @@ L. Zhang, J. Marron, H. Shen and Z. Zhu (2007) "Singular value decomposition and
 A. Grahn (2011) "The animate Package", \url{http://ctan.unsw.edu.au/macros/latex/contrib/animate/animate.pdf}.
 }
 \author{
-Han Lin Shang
+Han Lin Shang.  Please, report bugs and suggestions to hanlin.shang@anu.edu.au
 }
 \note{
 MATLAB code is available at \url{http://www.unc.edu/~lszhang/research/network/SVDmovie/}.
