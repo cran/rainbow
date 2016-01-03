@@ -45,7 +45,7 @@ A. Grahn (2011) "The animate Package", \url{http://ctan.unsw.edu.au/macros/latex
 Han Lin Shang.  Please, report bugs and suggestions to hanlin.shang@anu.edu.au
 }
 \note{
-MATLAB code is available at \url{http://www.unc.edu/~lszhang/research/network/SVDmovie/}.
+MATLAB code is available at \url{http://www.stat.purdue.edu/~lingsong/research/network/SVDmovie/index.html}.
 
 Using the animate package of Grahn(2011), a set of dynamic movies can be created to visualize the changes in singular rows and singular columns. 
 }

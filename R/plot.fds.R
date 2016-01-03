@@ -7,8 +7,8 @@ plot.fds = function (x, plot.type = c("functions", "time", "depth", "density"),
 					ncol = 1, ...) 
 {
     colorchoice = match.arg(colorchoice)
-    if (class(x)[1] == "fts" | class(x)[1] == "fds" | class(x)[1] == 
-        "sfts") {
+    if (class(x)[1] == "fts" | class(x)[1] == "fds" | class(x)[1] == "sfts") 
+    {
         plot.type <- match.arg(plot.type)
         if (plot.type == "time") {
             if (class(x)[1] == "fts" | class(x)[1] == "sfts") {
@@ -97,13 +97,6 @@ plot.fds = function (x, plot.type = c("functions", "time", "depth", "density"),
                 }
             }
             yy <- as.matrix(x$y)
-            if(any(is.na(yy)))
-            {
-                if(requireNamespace("forecast", quietly = TRUE))
-                {
-                    yy = matrix(forecast::na.interp(as.numeric(yy)), nrow = nrow(yy), ncol = ncol(yy))
-                }
-            }
             if (plot.type == "depth") {
                 sco <- PCAproj(t(yy), k = 2, center = median)$score
                 center <- compute.bagplot(sco)$center

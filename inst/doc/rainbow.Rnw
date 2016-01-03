@@ -1,6 +1,6 @@
 %\VignetteIndexEntry{The rainbow Package}
 %\VignetteDepends{rainbow, hdrcde, MASS, pcaPP, cluster, colorspace}
-%\VignetteKeywords{functional data visualization, functional boxplot, functional bagplot}
+%\VignetteKeywords{Functional data visualization, Functional boxplot, Functional bagplot}
 %\VignettePackage{rainbow}
 
 \documentclass[nojss]{jss}
@@ -26,7 +26,7 @@
 
 %% need no \usepackage{Sweave.sty}
 
-\author{Han Lin Shang\\Monash University}
+\author{Han Lin Shang\\ Australian National University}
 
 \title{The \pkg{rainbow} Package}
 
@@ -43,14 +43,15 @@ Recent advances in computer technology have tremendously increased the usage of 
 \Plainkeywords{functional data analysis, visualization, Statistics}
 
 \Address{Han Lin Shang\\
-Department of Econometrics \& Business Statistics \\
-Monash University\\
-Melbourne, VIC, 3800, \\
-E-mail: \email{HanLin.Shang@monash.edu}\\
-URL: \url{http://monashforecasting.com/index.php?title=User:Han} \\
+Research School of Finance, Actuarial Studies and Statistics \\
+Australian National University\\
+Canberra, ACT 2601, Australia \\
+E-mail: \email{hanlin.shang@anu.edu.au}\\
+URL: \url{https://researchers.anu.edu.au/researchers/shang-h} \\
 }
 
 \begin{document}
+\SweaveOpts{concordance=FALSE}
 
 %% Note that you should use the \pkg{}, \proglang{} and \code{} commands.
 
@@ -74,7 +75,9 @@ time series mitigates the problem of missing values by an interpolation or smoot
 \section*{Data sets}
 
 The visualization methods are demonstrated using age-specific Australian fertility rates and monthly sea surface temperatures. The detail of these two data sets are described below. Figure~\ref{fig:2} shows annual age-specific Australian fertility rates between ages 15 and 49 observed from 1921 to 2006. These data were obtained from the Australian Bureau of Statistics (Cat No, 3105.0.65.001, Table 38), and have been included in the \pkg{rainbow} package. The fertility rates are defined as the number of live births at 30$^{\text{th}}$ June each year, per 1000 of the female resident population of the same age.
-\setkeys{Gin}{width=0.45\textwidth}
+
+\vspace{-.4in}
+\setkeys{Gin}{width=0.55\textwidth}
 \begin{figure}[!ht]
 \begin{center}
 <<fig=TRUE,echo=FALSE,keep.source=TRUE>>=
@@ -85,18 +88,22 @@ plot(Australiasmoothfertility, plot.type = "functions",
      plotlegend = TRUE)
 @
 \end{center}
+\vspace{-.3in}
 \caption{Smoothed Australian fertility rates between ages 15 and 49 observed from 1921 to 2006.}\label{fig:2}
 \end{figure}
 
 Although the four graphical techniques work equally well for plotting un-smoothed multivariate data, functional data ought to be smooth in nature. Therefore, the fertility rates were smoothed using a weighted median smoothing $B$-spline, constrained to be concave \citep[see][for details]{HN99, HU07}.
 
 Figure~\ref{fig:3} shows monthly sea surface temperatures (in $^{\circ}$C) from January 1950 to December 2006. These data were obtained from National Oceanic and Atmospheric Administration (\url{http://www.cpc.noaa.gov/data/indices/sstoi.indices}) and have also been included in the \pkg{rainbow} package \citep{SH10}. These sea surface temperatures were measured by moore buoys in the ``Ni\~{n}o region", which is defined as the area within the coordinate $0-10^{\circ}$ South and $90-80^{\circ}$ West.
+
+\setkeys{Gin}{width=0.5\textwidth}
 \begin{figure}[!ht]
 \centering
 <<fig=TRUE,echo=FALSE,keep.source=TRUE>>=
 plot(ElNinosmooth, plot.type = "functions",
      plotlegend = TRUE)
 @
+\vspace{-.15in}
 \caption{Smoothed monthly sea surface temperatures (in $^{\circ}$C) from January 1950 to December 2006.}\label{fig:3}
 \end{figure}
 
@@ -126,6 +133,7 @@ plot(ElNinosmooth, plot.type = "functions", plotlegend = TRUE)
 
 For functional time series without a trend (e.g., Figure~\ref{fig:3}), the rainbow plot can still be used by constructing other order indexes, such as halfspace location depth and highest density regions. The colors of curves are then chosen in a rainbow color according to the ordering of depth or density.
 
+\vspace{-.4in}
 \begin{figure}[!ht]
   \begin{center}
 \subfloat[Rainbow plot with depth ordering. The median curve is shown in black.]
@@ -133,7 +141,7 @@ For functional time series without a trend (e.g., Figure~\ref{fig:3}), the rainb
 <<fig=TRUE,echo=FALSE,keep.source=TRUE,include=FALSE>>=
   plot(ElNinosmooth,plot.type="depth",plotlegend=TRUE)
 @
-\includegraphics[width=0.4\textwidth]{rainbow-004}\label{fig:depth}
+\includegraphics[width=0.46\textwidth]{rainbow-004}\label{fig:depth}
 }
 \qquad
 \subfloat[Rainbow plot with density ordering. The mode curve is shown in black.]
@@ -141,7 +149,7 @@ For functional time series without a trend (e.g., Figure~\ref{fig:3}), the rainb
 <<fig=TRUE,echo=FALSE,keep.source=TRUE,include=FALSE>>=
 plot(ElNinosmooth,plot.type="density",plotlegend=TRUE)
 @
-\includegraphics[width=0.4\textwidth]{rainbow-005}\label{fig:density}
+\includegraphics[width=0.46\textwidth]{rainbow-005}\label{fig:density}
 }
 \end{center}
 \caption{Rainbow plot with depth and density orderings.}
@@ -167,9 +175,10 @@ Adopting from the idea of projection pursuit \citep{CBC+95}, \citet{HS10} use a 
 
 Following \citet{JR92} and \citet{SJT09}, the functional bagplot is considered as a mapping of the bivariate bagplot \citep{RRT99} of the first two robust principal component scores to the functional curves. The functional bagplot displays the median curve, and the inner and outer regions. The inner region is defined as the region bounded by all curves corresponding to the points in the bivariate bag. Hence, 50\% of curves are in the inner region. The outer region is similarly defined as the region bounded by all curves corresponding to the points within the bivariate fence region. The colors of bivariate outliers are matched to the same colors of functional outliers.
 
-Figures~\ref{fig:4} and~\ref{fig:5} display the bivariate and functional bagplots of the sea surface temperature data.
+Figures~\ref{fig:4} and~\ref{fig:5} display the bivariate and functional bagplots of the sea surface temperature data. The detected outliers in the sea surface temperature data are the years 1982-1983 and 1997-1998. The sea surface temperatures during 1982-1983 began in June 1982 with a moderate increase, then there were abnormal increases between September 1982 and June 1983 \citep{TOB+99}. The sea surface temperatures during 1997-1998 were also unusual --- they became extremely warm in the latter half of 1997, and stayed high for the early part of 1998.
 
-\begin{figure}[!ht]
+\vspace{-.4in}
+\begin{figure}[!htbp]
 \begin{center}
 \subfloat[The bivariate bagplot.]
 {
@@ -179,7 +188,7 @@ Figures~\ref{fig:4} and~\ref{fig:5} display the bivariate and functional bagplot
 fboxplot(ElNinosmooth, plot.type = "bivariate", type = "bag", projmethod = "PCAproj", 
          ylim = c(-10, 20), xlim = c(-10, 20))
 @
-\includegraphics[width=0.4\textwidth]{rainbow-006}\label{fig:4}
+\includegraphics[width=0.46\textwidth]{rainbow-006}\label{fig:4}
 }
 \qquad
 \subfloat[The functional bagplot.]
@@ -188,13 +197,12 @@ fboxplot(ElNinosmooth, plot.type = "bivariate", type = "bag", projmethod = "PCAp
 # plot.type = "functional", the bivariate pc scores are matched to corresponding curves
 fboxplot(ElNinosmooth, plot.type = "functional", type = "bag", projmethod = "PCAproj")
 @
-\includegraphics[width=0.4\textwidth]{rainbow-007}\label{fig:5}
+\includegraphics[width=0.46\textwidth]{rainbow-007}\label{fig:5}
 }
 \end{center}
+\vspace{-.2in}
 \caption{The bivariate and functional bagplots.}
 \end{figure}
-
-The detected outliers in the sea surface temperature data are the years 1982-1983 and 1997-1998. The sea surface temperatures during 1982-1983 began in June 1982 with a moderate increase, then there were abnormal increases between September 1982 and June 1983 \citep{TOB+99}. The sea surface temperatures during 1997-1998 were also unusual --- they became extremely warm in the latter half of 1997, and stayed high for the early part of 1998.
 
 In Figure~\ref{fig:4}, the dark gray region shows the 50\% bag, and the light gray region exhibits the customary 99\% fence. These convex hulls correspond directly to the equivalent regions with similar colors and shading in the functional bagplot (in Figure~\ref{fig:5}). Points outside these regions are defined as outliers. The different colors for these outliers enable the functional outliers to be matched to the bivariate outliers. The red asterisk marks the Tukey median of the bivariate principal component scores, and the solid black curve shows the median curve. The dotted blue line in the functional bagplot gives 95\% pointwise confidence intervals for the median curve. These bagplots were produced using the following code.
 
@@ -215,7 +223,8 @@ The bivariate principal component scores can also be ordered by the highest dens
 
 The functional HDR boxplot is a mapping of the bivariate HDR boxplot \citep{Hyndman96} of the first two robust principal component scores to the functional curves. The functional HDR boxplot displays the modal curve (i.e., the curve with the highest density), and the inner and outer regions. The inner region is defined as the region bounded by all the curves corresponding to the points inside the 50\% bivariate HDR. Thus, 50\% of curves are in the inner region. The outer region is similarly defined as the region bounded by all the curves corresponding to the points within the outer bivariate HDR. The colors of bivariate outliers are matched to the same colors of functional outliers.
 
-\begin{figure}[!ht]
+\vspace{-.4in}
+\begin{figure}[!htbp]
   \begin{center}
 \subfloat[The bivariate HDR boxplot.]
 {
@@ -225,7 +234,7 @@ The functional HDR boxplot is a mapping of the bivariate HDR boxplot \citep{Hynd
 fboxplot(ElNinosmooth, plot.type="bivariate", type="hdr", alpha=c(0.07,0.5), 
          projmethod = "PCAproj", ylim=c(-10,20), xlim=c(-10,20))
 @
-\includegraphics[width=0.4\textwidth]{rainbow-006}\label{fig:7}
+\includegraphics[width=0.44\textwidth]{rainbow-006}\label{fig:7}
 }
 \qquad
 \subfloat[The functional HDR boxplot.]
@@ -234,9 +243,10 @@ fboxplot(ElNinosmooth, plot.type="bivariate", type="hdr", alpha=c(0.07,0.5),
 # plot.type = "functional", the bivariate pc scores are matched to corresponding curves
 fboxplot(ElNinosmooth, plot.type = "functional", type = "hdr", alpha = c(0.07,0.5), projmethod="PCAproj")
 @
-\includegraphics[width=0.4\textwidth]{rainbow-007}\label{fig:8}
+\includegraphics[width=0.44\textwidth]{rainbow-007}\label{fig:8}
 }
   \end{center}
+  \vspace{-.2in}
   \caption{The bivariate and functional HDR boxplots.}
 \end{figure}
 
@@ -265,28 +275,29 @@ fboxplot(ElNinosmooth, plot.type = "functional", type = "hdr", alpha = c(0.07,0.
 
 \citet{ZMS+07} discretize a set of functional data on a dense grid, denoted as $\bm{f}(x_i)=[f_1(x_i),\cdots, f_n(x_i)]^{'}$, for $i=1,\cdots,p$, where $p$ is the number of covariates, and $n$ is the number of curves. Let $\{\bm{r}_i; i=1,\cdots,p\}$ and $\{\bm{c}_j; j=1,\cdots,n\}$ be the row and column vectors of the $(n\times p)$ matrix $\bm{f}(x_i)$, respectively. The SVD of $\bm{f}(x_i)$ is defined as
 \begin{equation*}
-  \bm{f}(x_i)=s_1\bm{u}_1\bm{v}_1^T+s_2\bm{u}_2\bm{v}_2^T+\cdots+s_K\bm{u}_K\bm{v}_K^T,
+  \bm{f}(x_i)=s_1\bm{u}_1\bm{v}_1^{\top}+s_2\bm{u}_2\bm{v}_2^{\top}+\cdots+s_K\bm{u}_K\bm{v}_K^{\top},
 \end{equation*}
-where the singular columns $\bm{u}_1,\cdots,\bm{u}_K$ form $K$ orthonormal basis functions for the column space spanned by $\{\bm{c}_j\}$; the singular rows $\bm{v}_1,\cdots,\bm{v}_K$ form $K$ orthonormal basis functions for the row space spanned by $\{\bm{r}_i\}$; and $^T$ symbolizes vector transpose. The vectors $\{\bm{u}_k\}$ and $\{\bm{v}_k\}$ are called singular column and singular row, respectively. The scalars $s_1,\cdots,s_K$ are called singular values. The matrix $\{s_k\bm{u}_k\bm{v}_k^T; k=1,\cdots,K\}$ is referred to as the SVD component.
+where the singular columns $\bm{u}_1,\cdots,\bm{u}_K$ form $K$ orthonormal basis functions for the column space spanned by $\{\bm{c}_j\}$; the singular rows $\bm{v}_1,\cdots,\bm{v}_K$ form $K$ orthonormal basis functions for the row space spanned by $\{\bm{r}_i\}$; and $^{\top}$ symbolizes vector transpose. The vectors $\{\bm{u}_k\}$ and $\{\bm{v}_k\}$ are called singular column and singular row, respectively. The scalars $s_1,\cdots,s_K$ are called singular values. The matrix $\{s_k\bm{u}_k\bm{v}_k^T; k=1,\cdots,K\}$ is referred to as the SVD component.
 
 The interactive plot of \citet{ZMS+07} captures the changes in the singular columns, as the number of curves gradually increases. Similarly, it also captures the changes in the singular rows, as the number of covariates gradually increases. The interactive plot simultaneously presents the column and row information of a two-way matrix, to relate the matrix to the corresponding curves, to show local variation, and to highlight interactions between columns and rows of a two-way matrix.
+
+Figure~\ref{fig:9} shows the SVD plot of the sea surface temperature data set. The first SVD component captures the seasonal pattern, while the second and third SVD components show the contrasts of sea surface temperatures among different months. Note that the SVD2 and SVD3 are on a much smaller scale in comparison to the SVD1, because the SVD1 accounts for the most of curves' variation. The functional time series can be approximated by the summation of the first three SVD components. From the residual plot, outliers can be identified if they differ significantly from zero.
 
 \begin{figure}[!ht]
 \centering
 <<fig=TRUE,echo=FALSE,keep.source=TRUE,include=FALSE>>=
 SVDplot(ElNinosmooth, order = 3, plot = TRUE)
 @
-\includegraphics[width=0.8\textwidth]{rainbow-010}
+\includegraphics[width=\textwidth]{rainbow-010}
 \caption{Singular value decomposition for the smoothed monthly sea surface temperatures (in $^{\circ}$C) from January 1950 to December 2006.}\label{fig:9}
 \end{figure}
-
-Figure~\ref{fig:9} shows the SVD plot of the sea surface temperature data set. The first SVD component captures the seasonal pattern, while the second and third SVD components show the contrasts of sea surface temperatures among different months. Note that the SVD2 and SVD3 are on a much smaller scale in comparison to the SVD1, because the SVD1 accounts for the most of curves' variation. The functional time series can be approximated by the summation of the first three SVD components. From the residual plot, outliers can be identified if they differ significantly from zero.
 
 In R, the non-animated SVD plot can be produced using the following code.
 \begin{smallexample}
 \begin{smallverbatim}
-# order represents the number of SVD components as the number of SVD components increases
-# the residuals should be centered around zero plot can be suppressed by setting plot=FALSE
+# order denotes the number of SVD components 
+# as the number of SVD components increases, the residuals should be centered around zero 
+# plot can be suppressed by setting plot = FALSE
 SVDplot(ElNinosmooth, order = 3, plot = TRUE)
 \end{smallverbatim}
 \end{smallexample}

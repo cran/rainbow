@@ -13,7 +13,6 @@ SVDplot,
 summaryfunction
 )
 
-
 S3method(plot,fdepth)
 S3method(plot,fds)
 S3method(lines,fds)
@@ -21,7 +20,6 @@ S3method(points,fds)
 S3method(print,fds)
 S3method(print,fts)
 S3method(print,sfts)
-
 
 import(grDevices)
 import(ks)
@@ -32,13 +30,7 @@ import(pcaPP)
 import(cluster)
 import(colorspace)
 
-
-
-
-
-
-
-
-
-
+importFrom("graphics", "box", "boxplot", "image", "legend", "lines",
+             "matlines", "matplot", "par", "points", "polygon",
+             "segments", "text")
 
