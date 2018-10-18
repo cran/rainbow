@@ -20,7 +20,11 @@ function(data, method = c("robMah", "lrt", "depth.trim", "depth.pond", "HUoutlie
       }
       s = median(result)
       crit = s+sqrt(s) * lambda
-      out = as.numeric(colnames(data$y))[which(ifelse(result <= crit,1,0) == 0)]
+      if(is.null(colnames(data$y)))
+      {
+          stop("Please assign column name for the data matrix.")
+      }
+      out = colnames(data$y)[which(ifelse(result <= crit,1,0) == 0)]
       output = list(outliers = out)
   }
   if (method == "robMah"){

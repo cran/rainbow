@@ -9,10 +9,10 @@ fdepth(data, type = c("FM", "mode", "RP", "RPD", "radius"), trim = 0.25, alpha, 
 }
 \arguments{
   \item{data}{An object of class \code{\link[rainbow]{fds}} or \code{fts}.}
-  \item{type}{Type of functional depth.}
+  \item{type}{Type of functional depth. See detail section below.}
   \item{trim}{Percentage of trimming.}
-  \item{alpha}{Tuning parameter used when \code{type="radius"}.}
-  \item{weight}{Hard-thresholding or soft-thresholding when \code{type="radius"}.}
+  \item{alpha}{Tuning parameter used when \code{type = "radius"}.}
+  \item{weight}{Hard-thresholding or soft-thresholding when \code{type = "radius"}.}
 }
 \value{
 A list containing the following components is returned.
@@ -21,21 +21,21 @@ A list containing the following components is returned.
   \item{ltrim}{Indexes of the trimmed curves.}
   \item{prof}{Functional depth for each curve.}
   \item{mtrim}{Mean of trimmed curves.}
-  \item{weight}{Weight values for all observations, when \code{type="radius"}.}
+  \item{weight}{Weight values for all observations, when \code{type = "radius"}.}
 }
 \details{
-If \code{type="FM"}, it computes the functional depth of Fraiman and Muniz (2001), which is considered as the first functional depth.
+If \code{type = "FM"}, it computes the functional depth of Fraiman and Muniz (2001), which is considered as the first functional depth.
 
-If \code{type="mode"}, it computes the functional depth of Cuevas et al. (2006). A functional mode is defined as the curve most densely surrounded by the rest of curves of the dataset.
+If \code{type = "mode"}, it computes the functional depth of Cuevas et al. (2006). A functional mode is defined as the curve most densely surrounded by the rest of curves of the dataset.
 
-If \code{type="RP"} and \code{type="RPD"}, it computes random projection functional depth of Cuevas et al. (2007). 
+If \code{type = "RP"} and \code{type = "RPD"}, it computes random projection functional depth of Cuevas et al. (2007). 
 Cuevas et al. (2007) considered the random projection depth based on measuring the depth of the functional data 
 under projections and taking additional information of their derivatives. The basic idea is to project each functional curve, along a random direction, defining a 
 point in \eqn{R^2}. A data depth in \eqn{R^2} provides an order of the projected points.
 
-If \code{type="radius"}, it ranks the curves according to alpha-radius. Then using the hard thresholding or soft thresholding, trimmed mean and median can be computed.
+If \code{type = "radius"}, it ranks the curves according to alpha-radius. Then using the hard thresholding or soft thresholding, trimmed mean and median can be computed.
 
-The argument trim=0.25 first order curves by depth, and then trim 25 percent curves that have comparably lower depth.
+The argument trim = 0.25 first order curves by depth, and then trim 25 percent curves that have comparably lower depth.
 }
 \references{
 R. Fraiman and G. Muniz (2001) "Trimmed means for functional data", \emph{Test}, \bold{10}(2), 419-440.
@@ -55,15 +55,17 @@ M. Febrero and P. Galeano and W. Gonzalez-Manteiga (2010) "Measures of influence
 J. A. Cuesta-Albertos and A. Nieto-Reyes (2010) "Functional classification and the random Tukey depth. Practical issues", Combining Soft Computing and Statistical Methods in Data Analysis, Advances in Intelligent and Soft Computing, Volume 77, 123-130.
 
 D. Gervini (2012) "Outlier detection and trimmed estimation in general functional spaces", \emph{Statistica Sinica}, \bold{22}(4), 1639-1660.
+
+P. Rana, G. Aneiros and J. M. Vilar (2015) "Detection of outliers in functional time series", \emph{Environmetrics}, \bold{26}, 178-191. 
 }
-\author{Han Lin Shang.  Please, report bugs and suggestions to hanlin.shang@anu.edu.au}
+\author{Han Lin Shang}
 \examples{
 fdepth(data = ElNino, type = "FM")
 fdepth(data = ElNino, type = "mode")
 fdepth(data = ElNino, type = "RP")
 fdepth(data = ElNino, type = "RPD")
-fdepth(data = ElNino, type = "radius", trim = 0.25, alpha = 0.5, weight="hard")
-fdepth(data = ElNino, type = "radius", trim = 0.25, alpha = 0.5, weight="soft")
+fdepth(data = ElNino, type = "radius", trim = 0.25, alpha = 0.5, weight = "hard")
+fdepth(data = ElNino, type = "radius", trim = 0.25, alpha = 0.5, weight = "soft")
 }
 \keyword{distribution}
 

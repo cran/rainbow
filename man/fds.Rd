@@ -4,7 +4,7 @@
 \alias{sfts}
 \title{Create functional objects}
 \description{
-The function \code{fds} is used to create general functional objects that are not ordered by time.
+The function \code{fds} is used to create general independent and identically distributed (i.i.d.) functional objects that are not ordered by time.
 The function \code{fts} is used to create functional time series objects.
 The function \code{sfts} is used to create sliced functional time series objects, where the \code{x} variable is 
 also a time variable.
@@ -29,7 +29,7 @@ sfts(data, period = frequency(data), start = tsp(data)[1],
 \item{yname}{Character string giving name of \code{y} vector. (optional)}
 }
 \value{An object of class \code{fds} or \code{fts} or \code{sfts}.}
-\author{Rob J Hyndman and Han Lin Shang.  Please, report bugs and suggestions to hanlin.shang@anu.edu.au}
+\author{Rob J Hyndman and Han Lin Shang}
 \examples{
 fds(x = 1:20, y = Simulationdata$y, xname = "x", yname = "Simulated value")
 fts(x = 15:49, y = Australiasmoothfertility$y, xname = "Age", 

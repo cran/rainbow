@@ -36,15 +36,15 @@ Plot functional curves.
 }
 \value{Function produces a plot.}
 \details{
-If \code{plot.type="functions"}, then functions are plotted using a rainbow color palette so the
+If \code{plot.type = "functions"}, then functions are plotted using a rainbow color palette so the
 first few functions are shown in red, followed by orange, yellow, green, blue
 and indigo with the last few functions plotted in violet.
 
-If \code{plot.type="time"}, then each value of x is shown as a separate time series in a time plot.
+If \code{plot.type = "time"}, then each value of x is shown as a separate time series in a time plot.
 
-If \code{plot.type="depth"}, then functions are first ordered by depth and then plotted using a rainbow color palette.
+If \code{plot.type = "depth"}, then functions are first ordered by depth and then plotted using a rainbow color palette.
 
-If \code{plot.type="density"}, then functions are first ordered by density and then plotted using a rainbow color palette.
+If \code{plot.type = "density"}, then functions are first ordered by density and then plotted using a rainbow color palette.
 }
 \references{
 R. J. Hyndman and H. L. Shang. (2010) "Rainbow plots, bagplots, and boxplots for functional data", \emph{Journal of Computational and Graphical Statistics}, \bold{19}(1), 29-45.

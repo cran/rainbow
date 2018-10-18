@@ -6,8 +6,7 @@
 \description{
 Original monthly sea surface temperatures have been restricted from January 1950 to December 2011. 
 
-The monthly sea surface tmeperatures can be smoothed using smoothing spline with the smoothing parametric 
-determined by generalized cross validation. 
+The monthly sea surface tmeperatures can be smoothed using smoothing spline with the smoothing parameter determined by generalized cross validation. 
 }
 \usage{
 data(ElNino2011)

@@ -14,7 +14,7 @@ SVDplot(object, order = 3, plot = TRUE, plot.type = c("fts", "image"),
 }
 \arguments{
   \item{object}{An object of \code{\link[rainbow]{fds}}.}
-  \item{order}{Number of SVD components. The maximum order is 4.}
+  \item{order}{Number of Singular Value Decomposition (SVD) components. The maximum order is 4.}
   \item{plot}{Is graphical display required?}
   \item{plot.type}{Plot functional time series or images?}
   \item{mfrow}{Grid of graphics.}

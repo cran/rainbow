@@ -3,7 +3,7 @@
 \alias{Australiasmoothfertility}
 \docType{data}
 \title{
-Australian fertility data
+Australian age-specific fertility data
 }
 \description{
 Age-specific fertility rates between ages 15 and 49 in Australia from 1921 to 2006. 
@@ -34,6 +34,12 @@ R. J. Hyndman and M. S. Ullah (2007) "Robust forecasting of mortality and fertil
 R. J. Hyndman and H. Booth (2008) "Stochastic population forecasts using functional data models for mortality, fertility and migration", \emph{International Journal of Forecasting}, \bold{24}(3), 323-342.
 
 R. J. Hyndman and H. L. Shang (2009) "Forecasting functional time series (with discussion)", \emph{Journal of the Korean Statistical Society}, \bold{38}(3), 199-221.
+
+H. L. Shang (2012) Point and interval forecasts of age-specific fertility rates: a comparison of functional principal component methods, \emph{Journal of Population Research}, \bold{29}(3), 249-267.
+
+H. L. Shang (2015) On the selection of optimal Box-Cox transformation parameter for modeling and forecasting age-specific fertility, \emph{Journal of Population Research}, \bold{32}(1), 69-79.
+
+H. L. Shang (2016) Visualising rate of change: application to age-specific fertility, \url{https://arxiv.org/abs/1406.4386}.
 }
 \author{Han Lin Shang}
 \examples{

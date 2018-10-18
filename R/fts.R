@@ -5,6 +5,10 @@
     if (missing(yname)) 
         yname <- deparse(substitute(y))
     y <- as.matrix(y)
+    if (is.null(colnames(y)))
+    {
+        warning("Please assign column name for the data matrix.")
+    }
     if (length(x) != nrow(y)) 
         stop("Dimensions do not match")
     ytimes <- time(ts(rep(NA, ncol(y)), start = start, frequency = frequency))
@@ -32,6 +36,3 @@
         yname = yname), class = c("fts","fds")))
 
 }
-
-
-

@@ -1,3 +1,9 @@
+v 3.5
+
+1) In the fts and fds functions, the user needs to specify colnames of the data matrix
+2) In the foutliers function, fix a bug to do with the colnames of the data matrix
+3) Update references in the rainbow-package.Rd
+
 v 3.4
 
 1) Update plot.fds function

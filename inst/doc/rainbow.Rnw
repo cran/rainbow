@@ -1,6 +1,6 @@
 %\VignetteIndexEntry{The rainbow Package}
-%\VignetteDepends{rainbow, hdrcde, MASS, pcaPP, cluster, colorspace}
-%\VignetteKeywords{Functional data visualization, Functional boxplot, Functional bagplot}
+%\VignetteDepends{MASS, pcaPP}
+%\VignetteKeywords{Functional time series plots}
 %\VignettePackage{rainbow}
 
 \documentclass[nojss]{jss}
@@ -11,8 +11,6 @@
 \newcommand{\field}[1]{\mathbb{#1}}
 \newcommand{\R}{\field{R}}
 
-%% Change the default page sizes.
-
 \setlength{\topmargin}{-0.25in}
 \setlength{\textheight}{8.5in}
 \setlength{\oddsidemargin}{.0in}
@@ -22,9 +20,6 @@
 
 \newenvironment{smallexample}{\begin{alltt}\small}{\end{alltt}}
 \newenvironment{smallverbatim}{\small\verbatim}{\endverbatim}
-%\graphicspath{{plots/}}
-
-%% need no \usepackage{Sweave.sty}
 
 \author{Han Lin Shang\\ Australian National University}
 
@@ -53,12 +48,6 @@ URL: \url{https://researchers.anu.edu.au/researchers/shang-h} \\
 \begin{document}
 \SweaveOpts{concordance=FALSE}
 
-%% Note that you should use the \pkg{}, \proglang{} and \code{} commands.
-
-%% Note - fragile using \label{} in \section{} - must be outside
-
-%% For graphics
-
 <<eval=TRUE,echo=FALSE,keep.source=TRUE,results=hide>>=
 library(rainbow)
 options(prompt = "R> ", rainbow.messages = FALSE, digits = 3)
@@ -69,7 +58,7 @@ options(prompt = "R> ", rainbow.messages = FALSE, digits = 3)
 \section*{Introduction}
 
 Recent advances in computer technology have enabled researchers to collect and store high-dimensional data. When the high-dimensional data are repeatedly measured over a period of time, a time series of functions can be observed. Although one can display high-dimensional time series by adapting multivariate techniques, it is important to take smoothness of functions into account \citep{RD91}. It is the smooth property of functions that separates functional time series from multivariate time series. Unlike longitudinal time series, functional
-time series mitigates the problem of missing values by an interpolation or smoothing technique, thus functional time series is continuous. It is the smooth and continuous properties that separate functional time series from longitudinal time series. Visualization methods help the discovery of characteristics in data that might not have been apparent in mathematical models and summary statistics. Yet this area of research has not received much attention in the literature of functional data analysis to date. However, notable exceptions are the phase-plane plot of \cite{RR02}, which highlights important distributional characteristics using the first and second derivatives of functional data; and the singular value decomposition (SVD) plot of \cite{ZMS+07}, which displays the changes in latent components in relation to the increases of the sample size or dimensionality. Another exception is the rainbow plot of \cite{HS10}, which can simultaneously provide graphical display of functional data and identify possible outliers. The aim of this article is to collect the R code that facilitate the implementation of these graphical techniques. The R code of phase-plane plot is included in the fda package \citep{RWG+11}, while others are included in the \pkg{rainbow} package \citep{SH10}. In addition, this article also presents the use of animation, which can easily be embedded in all three graphical techniques in order to visualize the time-varying features of data. The outline of this article is described as follows. Visualization methods of functional time series are first reviewed. Then, illustrated by two data sets, the visualization methods are demonstrated using the \pkg{rainbow} package. Conclusions are given in the end.
+time series mitigates the problem of missing values by an interpolation or smoothing technique, thus functional time series is continuous. It is the smooth and continuous properties that separate functional time series from longitudinal time series. Visualization methods help the discovery of characteristics in data that might not have been apparent in mathematical models and summary statistics. Yet this area of research has not received much attention in the literature of functional data analysis to date. However, notable exceptions are the phase-plane plot of \cite{RR02}, which highlights important distributional characteristics using the first and second derivatives of functional data; and the singular value decomposition (SVD) plot of \cite{ZMS+07}, which displays the changes in latent components in relation to the increases of the sample size or dimensionality. Another exception is the rainbow plot of \cite{HS10}, which can simultaneously provide graphical display of functional data and identify possible outliers. The aim of this article is to collect the R code that facilitate the implementation of these graphical techniques. The \proglang{R} code of phase-plane plot is included in the fda package \citep{RWG+11}, while others are included in the \pkg{rainbow} package \citep{SH10}. In addition, this article also presents the use of animation, which can easily be embedded in all three graphical techniques in order to visualize the time-varying features of data. The outline of this article is described as follows. Visualization methods of functional time series are first reviewed. Then, illustrated by two data sets, the visualization methods are demonstrated using the \pkg{rainbow} package. Conclusions are given in the end.
 
  
 \section*{Data sets}
@@ -308,25 +297,10 @@ This article revisited four graphical methods included in the \pkg{rainbow} pack
 
 \section*{Acknowledgements}
 
-Thanks to the editors and reviewers for constructive comments and suggestions that have significantly improved this article. Thanks also to Professor Rob Hyndman for helping with R code.
+Thanks to the editors and reviewers for constructive comments and suggestions that have significantly improved this article. Thanks also to Professor Rob Hyndman for helping with \proglang{R} code.
 
 
 \bibliography{Shang}
 
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
 

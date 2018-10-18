@@ -14,9 +14,9 @@ fboxplot(data, plot.type = c("functional", "bivariate"),
 \arguments{
   \item{data}{An object of class \code{\link[rainbow]{fds}} or \code{fts}.}
   \item{plot.type}{Version of boxplot. When \code{plot.type="functional"}, a functional plot is provided. When \code{plot.type="bivariate"}, a square bivariate plot is provided.}
-  \item{type}{Type of boxplot. When \code{type="bag"}, a bagplot is provided. When \code{type="hdr"}, a HDR boxplot is provided.}
+  \item{type}{Type of boxplot. When \code{type = "bag"}, a bagplot is provided. When \code{type = "hdr"}, a HDR boxplot is provided.}
   \item{alpha}{Coverage probability for the functional HDR boxplot. \eqn{\alpha}{alpha} are the coverage percentages of the outliers and the central region.}
-  \item{factor}{When \code{type="bag"}, the outer region of a bagplot is the convex hull obtained by inflating the inner region by the bagplot factor.}
+  \item{factor}{When \code{type = "bag"}, the outer region of a bagplot is the convex hull obtained by inflating the inner region by the bagplot factor.}
   \item{na.rm}{Remove missing values.}
   \item{xlab}{A title for the x axis.}
   \item{ylab}{A title for the y axis.}
@@ -29,13 +29,12 @@ fboxplot(data, plot.type = c("functional", "bivariate"),
   \item{...}{Other arguments.}
 }
 \details{
-The functional curves are first projected into a finite dimensional subspace. 
-For simiplicity, we choose the subspace as \eqn{R^2}. Based on Tukey (1974)'s halfspace bagplot and 
-Hyndman (1996)'s HDR boxplot, we order each data point in \eqn{R^2} by data depth and data density. 
-Outliers are those that have either lowest depth or lowest density.
+The functional curves are first projected into a finite dimensional subspace via functional principal component decomposition. 
+For simiplicity, we choose the subspace as \eqn{R^2}. Based on Tukey (1974)'s halfspace bagplot and Hyndman (1996)'s HDR boxplot, we order each data point in \eqn{R^2} by data depth and data density. 
+Outliers are those that have either lowest depth (distance from the centre) or lowest density.
 }
 \value{
-Function produces a plot.
+Function produces a graphical plot.
 }
 \references{
 J. W. Tukey (1974) "Mathematics and the picturing of data", \emph{Proceedings of the International Congress of Mathematicians}, \bold{2}, 523-532, Canadian Mathematical Congress, Montreal.
@@ -44,7 +43,13 @@ P. Rousseeuw, I. Ruts and J. Tukey (1999) "The bagplot: A bivariate boxplot", \e
 
 R. J. Hyndman (1996) "Computing and graphing highest density regions", \emph{The American Statistician}, \bold{50}(2), 120-126.
 
-R. J. Hyndman and H. L. Shang. (2010) "Rainbow plots, bagplots, and boxplots for functional data", \emph{Journal of Computational and Graphical Statistics}, \bold{19}(1), 29-45.
+R. J. Hyndman and H. L. Shang (2010) "Rainbow plots, bagplots, and boxplots for functional data", \emph{Journal of Computational and Graphical Statistics}, \bold{19}(1), 29-45.
+
+Y. Sun and M. G. Genton (2011) "Functional boxplots", \emph{Journal of Computational and Graphical Statistics}, \bold{20}(2), 316-334.
+
+Y. Sun and M. G. Genton (2012) "Adjusted functional boxplots for spatio-temporal data visualization and outlier detection", \emph{Environmetrics}, \bold{23}, 54-64.
+
+Y. Sun and M. G. Genton (2012) "Functional median polish", \emph{Journal of Agricultural, Biological, and Environmental Statistics}, \bold{17}, 354-376.
 }
 \author{Rob J Hyndman, Han Lin Shang. Please, report bugs and suggestions to hanlin.shang@anu.edu.au}
 \seealso{
