@@ -52,9 +52,9 @@ R. J. Hyndman and H. L. Shang. (2010) "Rainbow plots, bagplots, and boxplots for
 \author{Rob J Hyndman, Han Lin Shang. Please, report bugs and suggestions to hanlin.shang@anu.edu.au}
 \seealso{\code{\link[rainbow]{fds}}, \code{\link[rainbow]{lines.fds}}, \code{\link[rainbow]{points.fds}}}
 \examples{
-plot(x = ElNinosmooth, plot.type = "functions", legend = TRUE)
-lines(x = ElNinosmooth, plot.type = "functions", index = 3)
-points(x = ElNinosmooth, plot.type = "functions", index = 3)
+plot(x = ElNino_OISST_region_1and2, plot.type = "functions", legend = TRUE)
+lines(x = ElNino_OISST_region_1and2, plot.type = "functions", index = 3)
+points(x = ElNino_OISST_region_1and2, plot.type = "functions", index = 3)
 }
 \keyword{hplot}
 

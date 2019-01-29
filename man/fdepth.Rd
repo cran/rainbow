@@ -60,12 +60,14 @@ P. Rana, G. Aneiros and J. M. Vilar (2015) "Detection of outliers in functional 
 }
 \author{Han Lin Shang}
 \examples{
-fdepth(data = ElNino, type = "FM")
-fdepth(data = ElNino, type = "mode")
-fdepth(data = ElNino, type = "RP")
-fdepth(data = ElNino, type = "RPD")
-fdepth(data = ElNino, type = "radius", trim = 0.25, alpha = 0.5, weight = "hard")
-fdepth(data = ElNino, type = "radius", trim = 0.25, alpha = 0.5, weight = "soft")
+fdepth(data = ElNino_OISST_region_1and2, type = "FM")
+fdepth(data = ElNino_OISST_region_1and2, type = "mode")
+fdepth(data = ElNino_OISST_region_1and2, type = "RP")
+fdepth(data = ElNino_OISST_region_1and2, type = "RPD")
+fdepth(data = ElNino_OISST_region_1and2, type = "radius", trim = 0.25, 
+	alpha = 0.5, weight = "hard")
+fdepth(data = ElNino_OISST_region_1and2, type = "radius", trim = 0.25, 
+	alpha = 0.5, weight = "soft")
 }
 \keyword{distribution}
 

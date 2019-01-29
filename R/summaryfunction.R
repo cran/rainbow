@@ -36,7 +36,7 @@ summaryfunction = function(ftsdata, plot.type = c("summarystats", "quantilestats
         quantvec=matrix(,p,length(quantilepercent))
         for(i in 1:p)
         {
-            quantvec[i,] = quantile(ftsdata$y[i,], prob = quantilepercent)
+            quantvec[i,] = quantile(ftsdata$y[i,], prob = quantilepercent, na.rm = TRUE)
         }
         matplot(ftsdata$x, quantvec, type="l", col = rainbow(length(quantilepercent)),
                 lty = 1:length(quantilepercent), xlab = xname, ylab = yname)

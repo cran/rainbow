@@ -20,7 +20,7 @@ R. J. Hyndman and H. L. Shang. (2010) "Rainbow plots, bagplots, and boxplots for
 \author{Rob J Hyndman, Han Lin Shang}
 \seealso{\code{\link[rainbow]{fdepth}}}
 \examples{
-plot(fdepth(ElNino))
+plot(fdepth(ElNino_OISST_region_1and2))
 }
 \keyword{hplot}
 

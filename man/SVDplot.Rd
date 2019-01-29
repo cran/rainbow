@@ -53,7 +53,7 @@ Using the animate package of Grahn(2011), a set of dynamic movies can be created
 \code{\link[rainbow]{fboxplot}}, \code{\link[base]{svd}}
 }
 \examples{
-SVDplot(ElNinosmooth)
-SVDplot(ElNinosmooth, plot.type = "image")
+SVDplot(ElNino_OISST_region_1and2)
+SVDplot(ElNino_OISST_region_1and2, plot.type = "image")
 }
 \keyword{multivariate}

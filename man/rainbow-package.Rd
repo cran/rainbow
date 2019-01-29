@@ -48,7 +48,7 @@ P. Kokoszka, G. Rice and H. L. Shang (2017) "Inference for the autocovariance of
 
 Y. Gao and H. L. Shang (2017) "Multivariate functional time series forecasting: An application to age-specific mortality rates", Risks, \bold{5}(2), 21.
 
-H. L. Shang (2018) "Visualizing rate of change: An application to age-specific fertility rates", Journal of the Royal Statistical Society: Series A (Statistics in Society), \bold{forthcoming}.
+H. L. Shang (2018) "Visualizing rate of change: An application to age-specific fertility rates", Journal of the Royal Statistical Society: Series A (Statistics in Society), \bold{182}(1), 249-262.
 
 H. L. Shang (2018) "Bootstrap methods for stationary functional time series", Statistics and Computing, \bold{28}(1), 1-10/
 

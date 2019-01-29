@@ -56,8 +56,10 @@ Y. Sun and M. G. Genton (2012) "Functional median polish", \emph{Journal of Agri
 \code{\link[rainbow]{SVDplot}}
 }
 \examples{
-fboxplot(data = ElNino, plot.type = "functional", type = "bag", projmethod="PCAproj")
-fboxplot(data = ElNino, plot.type = "bivariate", type = "bag", projmethod="PCAproj")
+fboxplot(data = ElNino_OISST_region_1and2, plot.type = "functional", 
+	type = "bag", projmethod="PCAproj")
+fboxplot(data = ElNino_OISST_region_1and2, plot.type = "bivariate", 
+	type = "bag", projmethod="PCAproj")
 }
 \keyword{multivariate}
 

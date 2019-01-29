@@ -1,3 +1,9 @@
+v 3.6
+
+1) Extend the Australian fertility data from 1921 to 2015
+2) Update the sea surface temperature data set observed by the optimum interpolation sea surface temperature
+3) Update the sea surface temperature data set observed by the extended reconstructed sea surface temperature
+
 v 3.5
 
 1) In the fts and fds functions, the user needs to specify colnames of the data matrix

@@ -1,4 +1,4 @@
-%\VignetteIndexEntry{The rainbow Package}
+%\VignetteIndexEntry{Rainbow plot: the rainbow Package for R}
 %\VignetteDepends{MASS, pcaPP}
 %\VignetteKeywords{Functional time series plots}
 %\VignettePackage{rainbow}
@@ -6,7 +6,7 @@
 \documentclass[nojss]{jss}
 
 \usepackage{amsmath,amsfonts,enumitem,microtype,alltt,verbatim,subfig,bm,animate}
-\usepackage[utf8]{inputenc} 
+\usepackage[utf8]{inputenc}
 
 \newcommand{\field}[1]{\mathbb{#1}}
 \newcommand{\R}{\field{R}}
@@ -29,7 +29,7 @@
 
 \Plaintitle{The rainbow Package}
 
-\Abstract{ 
+\Abstract{
 Recent advances in computer technology have tremendously increased the usage of functional data, whose graphical representation can be infinite-dimensional curves, images or shapes. This article aims to describe four methods for visualizing functional time series using an \proglang{R} add-on package. These methods are demonstrated using the age-specific Australian fertility data from 1921 to 2006 and monthly sea surface temperature from January 1950 to December 2006.
 }
 
@@ -51,7 +51,7 @@ URL: \url{https://researchers.anu.edu.au/researchers/shang-h} \\
 <<eval=TRUE,echo=FALSE,keep.source=TRUE,results=hide>>=
 library(rainbow)
 options(prompt = "R> ", rainbow.messages = FALSE, digits = 3)
-@ 
+@
 
 %% <<fig=TRUE,eval=TRUE, height=, width=>>=
 
@@ -60,7 +60,7 @@ options(prompt = "R> ", rainbow.messages = FALSE, digits = 3)
 Recent advances in computer technology have enabled researchers to collect and store high-dimensional data. When the high-dimensional data are repeatedly measured over a period of time, a time series of functions can be observed. Although one can display high-dimensional time series by adapting multivariate techniques, it is important to take smoothness of functions into account \citep{RD91}. It is the smooth property of functions that separates functional time series from multivariate time series. Unlike longitudinal time series, functional
 time series mitigates the problem of missing values by an interpolation or smoothing technique, thus functional time series is continuous. It is the smooth and continuous properties that separate functional time series from longitudinal time series. Visualization methods help the discovery of characteristics in data that might not have been apparent in mathematical models and summary statistics. Yet this area of research has not received much attention in the literature of functional data analysis to date. However, notable exceptions are the phase-plane plot of \cite{RR02}, which highlights important distributional characteristics using the first and second derivatives of functional data; and the singular value decomposition (SVD) plot of \cite{ZMS+07}, which displays the changes in latent components in relation to the increases of the sample size or dimensionality. Another exception is the rainbow plot of \cite{HS10}, which can simultaneously provide graphical display of functional data and identify possible outliers. The aim of this article is to collect the R code that facilitate the implementation of these graphical techniques. The \proglang{R} code of phase-plane plot is included in the fda package \citep{RWG+11}, while others are included in the \pkg{rainbow} package \citep{SH10}. In addition, this article also presents the use of animation, which can easily be embedded in all three graphical techniques in order to visualize the time-varying features of data. The outline of this article is described as follows. Visualization methods of functional time series are first reviewed. Then, illustrated by two data sets, the visualization methods are demonstrated using the \pkg{rainbow} package. Conclusions are given in the end.
 
- 
+
 \section*{Data sets}
 
 The visualization methods are demonstrated using age-specific Australian fertility rates and monthly sea surface temperatures. The detail of these two data sets are described below. Figure~\ref{fig:2} shows annual age-specific Australian fertility rates between ages 15 and 49 observed from 1921 to 2006. These data were obtained from the Australian Bureau of Statistics (Cat No, 3105.0.65.001, Table 38), and have been included in the \pkg{rainbow} package. The fertility rates are defined as the number of live births at 30$^{\text{th}}$ June each year, per 1000 of the female resident population of the same age.
@@ -89,14 +89,12 @@ Figure~\ref{fig:3} shows monthly sea surface temperatures (in $^{\circ}$C) from 
 \begin{figure}[!ht]
 \centering
 <<fig=TRUE,echo=FALSE,keep.source=TRUE>>=
-plot(ElNinosmooth, plot.type = "functions",
+plot(ElNino_OISST_region_1and2, plot.type = "functions",
      plotlegend = TRUE)
 @
 \vspace{-.15in}
-\caption{Smoothed monthly sea surface temperatures (in $^{\circ}$C) from January 1950 to December 2006.}\label{fig:3}
+\caption{Monthly sea surface temperatures (in $^{\circ}$C) from January 1982 to December 2018.}\label{fig:3}
 \end{figure}
-
-The sea surface temperatures were smoothed using a smoothing spline with the smoothing parameter determined by generalized cross validation. Each curve represents smoothed sea surface temperatures in each year.
 
 
 \section*{Functional time series visualization methods and their demonstrations}
@@ -116,7 +114,7 @@ library("rainbow")
 # the most recent curve is shown in purple
 # the distant past cure is shown in red
 plot(Australiasmoothfertility, plot.type = "functions", plotlegend = TRUE)
-plot(ElNinosmooth, plot.type = "functions", plotlegend = TRUE)
+plot(ElNino_OISST_region_1and2, plot.type = "functions", plotlegend = TRUE)
 \end{smallverbatim}
 \end{smallexample}
 
@@ -128,7 +126,7 @@ For functional time series without a trend (e.g., Figure~\ref{fig:3}), the rainb
 \subfloat[Rainbow plot with depth ordering. The median curve is shown in black.]
 {
 <<fig=TRUE,echo=FALSE,keep.source=TRUE,include=FALSE>>=
-  plot(ElNinosmooth,plot.type="depth",plotlegend=TRUE)
+  plot(ElNino_OISST_region_1and2,plot.type="depth",plotlegend=TRUE)
 @
 \includegraphics[width=0.46\textwidth]{rainbow-004}\label{fig:depth}
 }
@@ -136,7 +134,7 @@ For functional time series without a trend (e.g., Figure~\ref{fig:3}), the rainb
 \subfloat[Rainbow plot with density ordering. The mode curve is shown in black.]
 {
 <<fig=TRUE,echo=FALSE,keep.source=TRUE,include=FALSE>>=
-plot(ElNinosmooth,plot.type="density",plotlegend=TRUE)
+plot(ElNino_OISST_region_1and2,plot.type="density",plotlegend=TRUE)
 @
 \includegraphics[width=0.46\textwidth]{rainbow-005}\label{fig:density}
 }
@@ -151,10 +149,10 @@ Figures~\ref{fig:depth} and~\ref{fig:density} present the rainbow plots of sea s
 # plot.type="depth", curves are plotted by depth
 # depth is distance between median and each curve
 # median curve shown in black line is the center
-plot(ElNinosmooth,plot.type="depth",plotlegend=TRUE)
+plot(ElNino_OISST_region_1and2,plot.type="depth",plotlegend=TRUE)
 # plot.type="density", curves are plotted by density
 # mode shown in black line has the highest density
-plot(ElNinosmooth,plot.type="density",plotlegend=TRUE)
+plot(ElNino_OISST_region_1and2,plot.type="density",plotlegend=TRUE)
 \end{smallverbatim}
 \end{smallexample}
 
@@ -174,7 +172,7 @@ Figures~\ref{fig:4} and~\ref{fig:5} display the bivariate and functional bagplot
 <<fig=TRUE,echo=FALSE,keep.source=TRUE,include=FALSE>>=
 # plot.type = "bivariate", the bivariate principal component scores are displayed
 # type = "bag" requests the bagplot
-fboxplot(ElNinosmooth, plot.type = "bivariate", type = "bag", projmethod = "PCAproj", 
+fboxplot(ElNino_OISST_region_1and2, plot.type = "bivariate", type = "bag", projmethod = "PCAproj",
          ylim = c(-10, 20), xlim = c(-10, 20))
 @
 \includegraphics[width=0.46\textwidth]{rainbow-006}\label{fig:4}
@@ -184,7 +182,7 @@ fboxplot(ElNinosmooth, plot.type = "bivariate", type = "bag", projmethod = "PCAp
 {
 <<fig=TRUE,echo=FALSE,keep.source=TRUE,include=FALSE>>=
 # plot.type = "functional", the bivariate pc scores are matched to corresponding curves
-fboxplot(ElNinosmooth, plot.type = "functional", type = "bag", projmethod = "PCAproj")
+fboxplot(ElNino_OISST_region_1and2, plot.type = "functional", type = "bag", projmethod = "PCAproj")
 @
 \includegraphics[width=0.46\textwidth]{rainbow-007}\label{fig:5}
 }
@@ -199,10 +197,10 @@ In Figure~\ref{fig:4}, the dark gray region shows the 50\% bag, and the light gr
 \begin{smallverbatim}
 # plot.type = "bivariate", the bivariate principal component scores are displayed
 # type = "bag" requests the bagplot
-fboxplot(ElNinosmooth, plot.type="bivariate", type="bag", projmethod = "PCAproj", 
+fboxplot(ElNino_OISST_region_1and2, plot.type="bivariate", type="bag", projmethod = "PCAproj",
          ylim=c(-10,20), xlim=c(-10,20))
 # plot.type = "functional", the bivariate pc scores are matched to corresponding curves
-fboxplot(ElNinosmooth, plot.type = "functional", type = "bag", projmethod = "PCAproj")
+fboxplot(ElNino_OISST_region_1and2, plot.type = "functional", type = "bag", projmethod = "PCAproj")
 \end{smallverbatim}
 \end{smallexample}
 
@@ -220,7 +218,7 @@ The functional HDR boxplot is a mapping of the bivariate HDR boxplot \citep{Hynd
 <<fig=TRUE,echo=FALSE,keep.source=TRUE,include=FALSE>>=
 # plot.type = "bivariate", the bivariate principal component scores are displayed
 # type = "hdr" requests the highest density region boxplot
-fboxplot(ElNinosmooth, plot.type="bivariate", type="hdr", alpha=c(0.07,0.5), 
+fboxplot(ElNino_OISST_region_1and2, plot.type="bivariate", type="hdr", alpha=c(0.07,0.5),
          projmethod = "PCAproj", ylim=c(-10,20), xlim=c(-10,20))
 @
 \includegraphics[width=0.44\textwidth]{rainbow-006}\label{fig:7}
@@ -230,7 +228,7 @@ fboxplot(ElNinosmooth, plot.type="bivariate", type="hdr", alpha=c(0.07,0.5),
 {
 <<fig=TRUE,echo=FALSE,keep.source=TRUE,include=FALSE>>=
 # plot.type = "functional", the bivariate pc scores are matched to corresponding curves
-fboxplot(ElNinosmooth, plot.type = "functional", type = "hdr", alpha = c(0.07,0.5), projmethod="PCAproj")
+fboxplot(ElNino_OISST_region_1and2, plot.type = "functional", type = "hdr", alpha = c(0.07,0.5), projmethod="PCAproj")
 @
 \includegraphics[width=0.44\textwidth]{rainbow-007}\label{fig:8}
 }
@@ -251,9 +249,9 @@ These HDR boxplots were produced using the following code.
 # type = "hdr" requests the HDR boxplot
 # alpha requests the coverage probability of inner
 # and outer HDR regions, customarily c(0.05,0.5)
-fboxplot(ElNinosmooth, plot.type="bivariate", type="hdr", alpha=c(0.07,0.5), 
+fboxplot(ElNino_OISST_region_1and2, plot.type="bivariate", type="hdr", alpha=c(0.07,0.5),
          projmethod="PCAproj", ylim=c(-10,20), xlim=c(-10,20))
-fboxplot(ElNinosmooth, plot.type = "functional", type = "hdr", alpha = c(0.07,0.5), 
+fboxplot(ElNino_OISST_region_1and2, plot.type = "functional", type = "hdr", alpha = c(0.07,0.5),
          projmethod="PCAproj")
 \end{smallverbatim}
 \end{smallexample}
@@ -275,7 +273,7 @@ Figure~\ref{fig:9} shows the SVD plot of the sea surface temperature data set. T
 \begin{figure}[!ht]
 \centering
 <<fig=TRUE,echo=FALSE,keep.source=TRUE,include=FALSE>>=
-SVDplot(ElNinosmooth, order = 3, plot = TRUE)
+SVDplot(ElNino_OISST_region_1and2, order = 3, plot = TRUE)
 @
 \includegraphics[width=\textwidth]{rainbow-010}
 \caption{Singular value decomposition for the smoothed monthly sea surface temperatures (in $^{\circ}$C) from January 1950 to December 2006.}\label{fig:9}
@@ -284,10 +282,10 @@ SVDplot(ElNinosmooth, order = 3, plot = TRUE)
 In R, the non-animated SVD plot can be produced using the following code.
 \begin{smallexample}
 \begin{smallverbatim}
-# order denotes the number of SVD components 
-# as the number of SVD components increases, the residuals should be centered around zero 
+# order denotes the number of SVD components
+# as the number of SVD components increases, the residuals should be centered around zero
 # plot can be suppressed by setting plot = FALSE
-SVDplot(ElNinosmooth, order = 3, plot = TRUE)
+SVDplot(ElNino_OISST_region_1and2, order = 3, plot = TRUE)
 \end{smallverbatim}
 \end{smallexample}
 
