@@ -1,17 +1,17 @@
-fdpca = function (x, y, order = 2, ngrid = 500, method = "rapca", mean = TRUE, 
-    level = FALSE, lambda = 3, iter = 1, ...) 
+fdpca = function (x, y, order = 2, ngrid = 500, method = "rapca", mean = TRUE,
+    level = FALSE, lambda = 3, iter = 1, ...)
 {
     n <- ncol(y)
     m <- length(x)
-    if (lambda < 1) 
+    if (lambda < 1)
         stop("Lambda too small")
-    if (iter < 1) 
+    if (iter < 1)
         stop("Need at least one iteration")
-    if (order < 0) 
+    if (order < 0)
         stop("Order must be at least 0")
-    if (ngrid < n) 
+    if (ngrid < n)
         stop("Grid should be larger than number of observations per time period.")
-    if (m != nrow(y)) 
+    if (m != nrow(y))
         stop("x and y of incompatible dimension")
     if (order > n/2 & method != "classical") {
         warning("Not enough data for robust PCA")
@@ -25,7 +25,7 @@ fdpca = function (x, y, order = 2, ngrid = 500, method = "rapca", mean = TRUE,
         yy[, i] <- spline(x[!miss], y[!miss, i], n = ngrid)$y
     }
     if (mean) {
-        if (method == "M" | method == "rapca") 
+        if (method == "M" | method == "rapca")
             ax <- L1median2(t(yy), method = "hoss")
         else ax <- rowMeans(yy, na.rm = TRUE)
         yy <- sweep(yy, 1, ax)
@@ -47,8 +47,8 @@ fdpca = function (x, y, order = 2, ngrid = 500, method = "rapca", mean = TRUE,
         basis <- cbind(approx(xx, ax, xout = x)$y, basis)
         colnames(coeff)[1] <- colnames(basis)[1] <- "mean"
     }
-    if (order == 0) 
-        return(list(basis = basis, coeff = coeff, weights = rep(1, 
+    if (order == 0)
+        return(list(basis = basis, coeff = coeff, weights = rep(1,
             n), v = rep(1, n), mean.se = axse))
     if (method == "M" | method == "rapca") {
         robusteig <- rapca(yy, order = order, mean = FALSE, ...)
@@ -79,7 +79,7 @@ fdpca = function (x, y, order = 2, ngrid = 500, method = "rapca", mean = TRUE,
     Phinorm = matrix(NA, length(x), order)
     Phinormngrid = matrix(NA, ngrid, order)
     for (i in 1:order) {
-        Phinorm[, i] = approx(xx, Phi[, i], xout = x)$y/delta/(sqrt(sum((approx(xx, 
+        Phinorm[, i] = approx(xx, Phi[, i], xout = x)$y/delta/(sqrt(sum((approx(xx,
             Phi[, i], xout = x)$y/delta)^2)))
         Phinormngrid[, i] = approx(x, Phinorm[, i], xout = xx)$y
     }
@@ -102,7 +102,7 @@ fdpca = function (x, y, order = 2, ngrid = 500, method = "rapca", mean = TRUE,
     varprop <- varprop[1:order]
     yy <- yy - Phinormngrid %*% t(B)
     s <- try(La.svd(t(yy)), silent = TRUE)
-    if (class(s) == "try-error") {
+    if (is(s, "try-error")) {
         s <- svd(t(yy), LINPACK = TRUE)
         s$vt <- t(s$v)
     }
@@ -113,14 +113,14 @@ fdpca = function (x, y, order = 2, ngrid = 500, method = "rapca", mean = TRUE,
     Phinorm2ngrid = matrix(NA, ngrid, m)
     if (m > 0) {
         for (i in 1:m) {
-            Phinorm2[, i] = approx(xx, Phi2[, i], xout = x)$y/delta/(sqrt(sum((approx(xx, 
+            Phinorm2[, i] = approx(xx, Phi2[, i], xout = x)$y/delta/(sqrt(sum((approx(xx,
                 Phi2[, i], xout = x)$y/delta)^2)))
             Phinorm2ngrid[, i] = approx(x, Phinorm2[, i], xout = xx)$y
         }
         B2 <- t(yy) %*% Phinorm2ngrid
         colnames(B2) <- paste("beta", order + (1:ncol(B2)), sep = "")
         coeff2dummy <- B2 * delta
-        colmeanrm2 = matrix(colMeans(coeff2dummy), dim(B2)[2], 
+        colmeanrm2 = matrix(colMeans(coeff2dummy), dim(B2)[2],
             1)
         coeff2 = sweep(coeff2dummy, 2, colmeanrm2)
         for (i in 1:m) {
@@ -132,8 +132,7 @@ fdpca = function (x, y, order = 2, ngrid = 500, method = "rapca", mean = TRUE,
         }
         colnames(basis2) <- paste("phi", order + (1:m), sep = "")
     }
-    return(list(basis = basis, coeff = coeff, varprop = varprop, 
-        weights = w/mean(w), v = v, basis2 = basis2, coeff2 = coeff2, 
+    return(list(basis = basis, coeff = coeff, varprop = varprop,
+        weights = w/mean(w), v = v, basis2 = basis2, coeff2 = coeff2,
         mean.se = axse))
 }
-

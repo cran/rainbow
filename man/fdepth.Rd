@@ -40,9 +40,9 @@ The argument trim = 0.25 first order curves by depth, and then trim 25 percent c
 \references{
 R. Fraiman and G. Muniz (2001) "Trimmed means for functional data", \emph{Test}, \bold{10}(2), 419-440.
 
-A. Cuevas and M. Febrero and R. Fraiman (2001) "Cluster Analysis:a further approach based on density estimation", \emph{Computational Statistics \& Data Analysis}, \bold{36}(4), 441-456.
+A. Cuevas and M. Febrero and R. Fraiman (2001) "Cluster Analysis:a further approach based on density estimation", \emph{Computational Statistics and Data Analysis}, \bold{36}(4), 441-456.
 
-A. Cuevas and M. Febrero and R. Fraiman (2006) "On the use of bootstrap for estimating functions with functional data", \emph{Computational Statistics \& Data Analysis}, \bold{51}(10), 1063-1074.
+A. Cuevas and M. Febrero and R. Fraiman (2006) "On the use of bootstrap for estimating functions with functional data", \emph{Computational Statistics and Data Analysis}, \bold{51}(10), 1063-1074.
 
 A. Cuevas and M. Febrero and R. Fraiman (2007) "Robust estimation and classification for functional data via projection-based depth notions", \emph{Computational Statistics}, \bold{22}(3), 481-496.
 

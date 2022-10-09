@@ -1,22 +1,22 @@
-`sfts` <- function (data, period = frequency(data), start = tsp(data)[1], 
-    frequency = 1, xname, yname) 
+`sfts` <- function (data, period = frequency(data), start = tsp(data)[1],
+    frequency = 1, xname, yname)
 {
-    if (class(data) != "ts") {
+    if (!is(data, "ts")) {
         warning("object is not time series.")
     }
     else {
         y = matrix(data, period, )
         x = 1:period
-        if (missing(xname)) 
+        if (missing(xname))
             xname <- deparse(x)
-        if (missing(yname)) 
+        if (missing(yname))
             yname <- "sliced data"
-        if (length(x) != nrow(y)) 
+        if (length(x) != nrow(y))
             stop("Dimensions do not match")
         ytimes <- time(ts(rep(NA, ncol(y)), start = start, frequency = frequency))
-        if (max(abs(ytimes - floor(ytimes))) < 1e-09) 
+        if (max(abs(ytimes - floor(ytimes))) < 1e-09)
             ylab <- paste(ytimes)
-        else if (frequency == 4) 
+        else if (frequency == 4)
             ylab <- paste(floor(ytimes), "-Q", cycle(ytimes), sep = "")
         else if (frequency == 12) {
             Mth <- month.abb[cycle(ytimes)]
@@ -29,7 +29,7 @@
         else ylab <- paste(floor(ytimes), "-", cycle(ytimes), sep = "")
         colnames(y) <- ylab
         rownames(y) <- x
-        return(structure(list(x = x, y = y, time = ytimes, xname = xname, 
+        return(structure(list(x = x, y = y, time = ytimes, xname = xname,
             yname = yname), class = c("sfts", "fts", "fds")))
     }
 }

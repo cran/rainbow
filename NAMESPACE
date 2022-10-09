@@ -33,4 +33,4 @@ import(colorspace)
 importFrom("graphics", "box", "boxplot", "image", "legend", "lines",
              "matlines", "matplot", "par", "points", "polygon",
              "segments", "text")
-
+importFrom("methods", "is")

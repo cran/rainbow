@@ -1,3 +1,8 @@
+v 3.7
+
+1) Update the fds function to remove the warning message
+2) Change the university email from the ANU to Macquarie
+
 v 3.6
 
 1) Extend the Australian fertility data from 1921 to 2015
@@ -64,7 +69,7 @@ v 2.5
 v 2.4
 
 1) Update the SVD function. The argument plot = FALSE would return a series of SVDs, reconstruction plot, and residual plot
-2) Update the plot.fds function. The argument plotlegend = TRUE would add a legend to the figure. 
+2) Update the plot.fds function. The argument plotlegend = TRUE would add a legend to the figure.
    When plot.type = "function", the legend displays the first curve, middle curve, last curve ordered by time.
    When plot.type = "depth", the legend displays the least depth curve, middle depth curve and median curve.
    When plot.type = "density", the legend displays the least populated curve, middle populated curve and mode curve
@@ -88,7 +93,7 @@ v 2.3.2
 
 1) Update the ElNino data
 
-v 2.3 
+v 2.3
 
 1) Delete col = "black" argument in lines.fds and points.fds
 2) Update col argument in plot.fds
@@ -109,14 +114,14 @@ v 2.0
 
 v 1.10
 
-1) Update the fboxplot 
+1) Update the fboxplot
 
 v 1.9
 
 1) Update the JCGS reference
 2) Add the ElNinosmooth data
 
-v 1.8 
+v 1.8
 
 1) Update the SVDplot
 2) Added color options to rainbow:::bhdr
@@ -151,4 +156,3 @@ v 1.3
 2) Add plot.fds, plot.sfts for plotting functional data, functional time series, and sliced functional time series
 3) Add lines.fds, lines.sfts for plotting
 4) Add points.fds, points.sfts for plotting
-
