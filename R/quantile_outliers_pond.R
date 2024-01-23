@@ -1,4 +1,4 @@
-`quantile.outliers.pond` <- function(data, dfunc = depth.RP, nb = 200, suav = 0.05, ...)
+`quantile_outliers_pond` <- function(data, dfunc = depth.RP, nb = 200, suav = 0.05, ...)
 {
     functions = t(data$y)
     n <- dim(functions)[1]

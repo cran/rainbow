@@ -1,3 +1,7 @@
+v 3.8
+
+1) remove the old vignette
+
 v 3.7
 
 1) Update the fds function to remove the warning message

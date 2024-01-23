@@ -1,8 +1,8 @@
-`outliers.depth.trim` <- function(data, dfunc = depth.RP, nb = 200, suav = 0.05, trim,...){
+`outliers_depth_trim` <- function(data, dfunc = depth.RP, nb = 200, suav = 0.05, trim,...){
        functions = t(data$y)
        n <- dim(functions)[1]
        m <- dim(functions)[2]
-       cutoff <- median(quantile.outliers.trim(data, dfunc = dfunc, nb = nb,
+       cutoff <- median(quantile_outliers_trim(data, dfunc = dfunc, nb = nb,
                         suav = suav, trim = trim,...))
        hay <- 1
        outliers <- c()

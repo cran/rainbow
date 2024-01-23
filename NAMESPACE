@@ -31,6 +31,7 @@ import(cluster)
 import(colorspace)
 
 importFrom("graphics", "box", "boxplot", "image", "legend", "lines",
-             "matlines", "matplot", "par", "points", "polygon",
-             "segments", "text")
+           "matlines", "matplot", "par", "points", "polygon",
+           "segments", "text")
 importFrom("methods", "is")
+importFrom("utils", "sessionInfo")

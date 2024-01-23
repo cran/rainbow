@@ -1,4 +1,4 @@
-`quantile.outliers.trim` <- function(data, dfunc = depth.RP, trim = 0.1, nb = 200, suav = 0.05, ...)
+`quantile_outliers_trim` <- function(data, dfunc = depth.RP, trim = 0.1, nb = 200, suav = 0.05, ...)
 {
   functions = t(data$y)
   n <- dim(functions)[1]

@@ -1,5 +1,5 @@
 `foutliers` <-
-function(data, method = c("robMah", "lrt", "depth.trim", "depth.pond", "HUoutliers"), 
+function(data, method = c("robMah", "lrt", "depth.trim", "depth.pond", "HUoutliers"),
              dfunc = depth.mode, nb = 200, suav = 0.05, trim = 0.1, order = 2, lambda = 3.29, ...)
 {
   method = match.arg(method)
@@ -7,7 +7,7 @@ function(data, method = c("robMah", "lrt", "depth.trim", "depth.pond", "HUoutlie
       output = outliers.lrt(data = data, nb = nb, suav = suav, trim = trim, ...)
   }
   if (method == "depth.trim"){
-      output = outliers.depth.trim(data = data, dfunc = dfunc, nb = nb, suav = suav, trim = trim, ...)
+      output = outliers_depth_trim(data = data, dfunc = dfunc, nb = nb, suav = suav, trim = trim, ...)
   }
   if (method == "depth.pond"){
       output = outliers.depth.pond(data = data, dfunc = dfunc, nb = nb, suav = suav, ...)
@@ -35,6 +35,3 @@ function(data, method = c("robMah", "lrt", "depth.trim", "depth.pond", "HUoutlie
   }
   return(output)
 }
-
-
-

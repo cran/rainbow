@@ -4,7 +4,7 @@
   m <- dim(functions)[2]
   if(is.null(n) && is.null(m)) 
      stop("I do not have a matrix")
-     cutoff <- median(quantile.outliers.pond(data, dfunc = dfunc, nb = nb, suav = suav,...))
+     cutoff <- median(quantile_outliers_pond(data, dfunc = dfunc, nb = nb, suav = suav,...))
      hay <- 1
      outliers <- c()
      prof.out <- c()

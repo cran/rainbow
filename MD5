@@ -1,6 +1,6 @@
-a582d202c7ce57da42531dd77a06f5d3 *ChangeLog
-9c114525433b4a99c52047d2acf6f1c8 *DESCRIPTION
-2fffbab599b0a85f230807fbc9ab29b1 *NAMESPACE
+63006cd90220912cb27f07ffe4b01361 *ChangeLog
+5f23ebe820e60402f9d7232803e79da3 *DESCRIPTION
+51e43ff80cbeb9cec1fd241a61fb1ace *NAMESPACE
 5d72ca9861d678d39735af39b5ccdfa9 *R/L1median2.r
 636ff7773d43ef10df4ec913c074737d *R/Qn.r
 c5e190b0c5e22d2fc5aae3fd12215d1b *R/SVDplot.R
@@ -20,7 +20,7 @@ bcfe95cd4b9096b74570ac2478f1da25 *R/fboxplot.R
 f88220e61c02f76e9ebad20f1a3c2dbf *R/fdpca.r
 4288bd7f07e1cc334971ea22c7c95671 *R/fds.R
 bf5b08aa6054f3339ba550548cf71b32 *R/fhdr.R
-e84008b5adc57a10334a897f7730a12d *R/foutliers.R
+ee3996ca2789ca2b2d9a8d06318dc242 *R/foutliers.R
 9c07b9b33619a963e45949b9e706a7d2 *R/fts.R
 3f43899178c752e14cb2efff2e7ceef9 *R/func.mean.R
 ffa0dae4328ebf4a4fa5a1d97d9c7997 *R/func.med.RPD.R
@@ -39,10 +39,10 @@ be154adc6ab9e77f683319246149bede *R/metri.p.r
 607947ddf5599242d98463321b842c3f *R/nicerange.R
 801c257f41e86afe6590efb6928efc8d *R/norm.r
 d3cbf9940237d4fc8ba8be583249bede *R/norme.r
-b80f88b3b38ee40164f30f341d524763 *R/outliers.depth.pond.R
-06bd6eb9bc43709f01c28e6a99de6cb2 *R/outliers.depth.trim.R
+3dcb658abfb3b72f3ba0f669186038e2 *R/outliers.depth.pond.R
 fa725d561752812f04e556691d1d685c *R/outliers.lrt.R
 7c47f7cb11e7f9b8c5556047d823cbae *R/outliers.thres.lrt.R
+ff49bea6ede699393fc564b777c9b483 *R/outliers_depth_trim.R
 2a6256c6395d30ce2891fb80df264604 *R/plot.bagplot.R
 14180992cb9d3666abe997286119337f *R/plot.fdepth.R
 63968a5327deff9df000dfab8e06076c *R/plot.fds.R
@@ -50,8 +50,8 @@ fa725d561752812f04e556691d1d685c *R/outliers.lrt.R
 6c6f768ea1b9e804ace28a4405615816 *R/print.fds.R
 1c240ac717acbe8fae32402bc9abccf2 *R/print.fts.R
 47084773ebab606f743c4d3e1ff71e0a *R/print.sfts.r
-618bd13aa098419d8ce17a1fa7f9d472 *R/quantile.outliers.pond.R
-34c30ab4b4b9baa346ff748a571bf37a *R/quantile.outliers.trim.R
+f6d6db23dac7e8a9a94611a19abcfa55 *R/quantile_outliers_pond.R
+1350b254a4cf668a28b03624f6cb6bcb *R/quantile_outliers_trim.R
 04cec90f35475771d61450a95c54ad88 *R/rainbow-internal.R
 c3a9275ee63b9896c378ccf6c55a87a9 *R/rapca.R
 346cde6301d97bede6c25cfe3e92deb0 *R/repmat.r
@@ -80,11 +80,10 @@ deac2cf1898d893a8b04f4eccec48e8d *demo/fboxplot.R
 1383b71c54157678be2b6180e2169a11 *demo/plot.fts.R
 5ab85a330bb0735da0ac51e780cc3a61 *demo/plot.sfts.R
 4588a57f7771568b8598db599f4721c4 *demo/sfts.R
-9caa269122720f81ff741306c5354da5 *inst/doc/rainbow.pdf
 3def7ff12ebe8724e39b7f7847d5862e *man/Australiafertility.Rd
 e9176e26c0c8cdea9346641665d8ec24 *man/ElNino_ERSST_region_1and2.Rd
 437ece268c4de20b718a816c1195ca9e *man/ElNino_OISST_region_1and2.Rd
-536925de808571babad831462173fb2f *man/SVDplot.Rd
+bc4c185fdd8e1f8902be0a5dda48e1c2 *man/SVDplot.Rd
 ba9241f0a2974eba4aaa977ac5fa05d8 *man/Simulationdata.Rd
 f6c7c9691918cf7cec89932d502dea34 *man/fboxplot.Rd
 f6467858ea6bca863bfb0e21a1332bc2 *man/fdepth.Rd
@@ -94,5 +93,3 @@ e3ebd080d8b965222bbfae8860f622b8 *man/foutliers.Rd
 89688bc54683d5a7148fca25b5e8a659 *man/plot.fds.Rd
 899c993198c926c207115a3152f9dd57 *man/rainbow-package.Rd
 03bd41ee4c197f250cd501f52c46b2da *man/summaryfunction.Rd
-5e12d40d40f84adeabe132a3d16ace86 *vignettes/Shang.bib
-150f83d8203cf05c3343a1701082a9af *vignettes/rainbow.Rnw

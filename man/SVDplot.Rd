@@ -39,13 +39,13 @@ When \code{plot = FALSE}, it returns the following:
 \references{
 L. Zhang, J. Marron, H. Shen and Z. Zhu (2007) "Singular value decomposition and its visualization", \emph{Journal of Computational and Graphical Statistics}, \bold{16}(4), 833-854.
 
-A. Grahn (2011) "The animate Package", \url{http://ctan.unsw.edu.au/macros/latex/contrib/animate/animate.pdf}.
+A. Grahn (2011) "The animate Package", \url{https://ctan.org/pkg/animate?lang=en}.
 }
 \author{
 Han Lin Shang.  Please, report bugs and suggestions to hanlin.shang@anu.edu.au
 }
 \note{
-MATLAB code is available at \url{http://www.stat.purdue.edu/~lingsong/research/network/SVDmovie/index.html}.
+MATLAB code is available at \url{https://www.stat.purdue.edu/~lingsong/}.
 
 Using the animate package of Grahn(2011), a set of dynamic movies can be created to visualize the changes in singular rows and singular columns. 
 }
